@@ -1,0 +1,178 @@
+﻿@model Sistema_de_Ventas.Models.tbCompras
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .containerOculto {
+        display: none;
+    }
+
+    .validacionOculta {
+        display: none;
+        color: red;
+    }
+</style>
+<h2>Nueva Compra</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="container">
+    <div class="card">
+        <div class="card-header" style="background-color:black; color:white;"><h4>Compra de Productos</h4></div>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.proveedorId, "proveedorId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("proveedorId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.proveedorId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input class="btn btn-primary btnInsertarCompra" type="button" id="btnInsertarCompra" value="Registrar Compra" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<div class="container containerOculto">
+    <div class="card">
+        <div class="card-header" style="background-color:black; color:white;"><h4>Comprar Productos</h4></div>
+        <div class="card-body">
+
+            <div class="form-group">
+                <label>Producto</label>
+                <div class="col-md-10">
+                    <select id="ddlProductos" class="form-control"></select>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Cantidad</label>
+                <div class="col-md-10">
+                    <input type="number" class="form-control" placeholder="Cantidad" name="txtcantidad" id="txtcantidad" />
+                    <label class="validacionOculta" id="lblcantidad">Ingrese la cantidad</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1"> <input class="btn btn-primary btnCompraVentaDetalle" type="button" id="btnCompraVentaDetalle" value="Agregar" /></div>
+                <div class="col-2"> <a href="/Compras/Index" class="btn btn-success">Finalizar Compra</a></div>
+                <div class="col-1"><label>Total:</label></div>
+                <div class="col-2"><input type="text" id="txttotal" class="form-control" readonly /></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container containerOculto">
+    <table id="tabla1" class="table table-striped" style="width:100%">
+        <thead style="background-color:black; color: white;">
+            <tr>
+                <td>Producto</td>
+                <td>Precio</td>
+                <td>Cantidad</td>
+            </tr>
+        </thead>
+
+
+        <tbody id="tbodyVentas">
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#btnInsertarCompra").click(function () {
+            var proveedorId = $("#proveedorId").val();
+            $("#btnInsertarCompra").fadeOut();
+            $("#proveedorId").prop("disabled", true);
+            $(".containerOculto").show();
+            $(".btnInsertarVenta").fadeOut();
+
+            $.ajax({
+                type: "POST",
+                url: "/Compras/Create",
+                data: { proveedorId: proveedorId },
+                success: function (response) {
+
+                },
+                error: function (error) {
+
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/ventas/CargarProductos",
+            success: function (data) {
+                var ddlProductos = $("#ddlProductos");
+                ddlProductos.empty();
+                $.each(data, function (index, item) {
+                    ddlProductos.append($("<option />").val(item.productoId).text(item.productoNombre));
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        $('#btnCompraVentaDetalle').click(function () {
+            var productoId = $('#ddlProductos').val();
+            var cantidad = $('#txtcantidad').val();
+            if (cantidad == "") {
+                $("#lblcantidad").show();
+            } else {
+                $("#lblcantidad").fadeOut();
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/Compras/Agregar',
+                data: { productoId: productoId, cantidad: cantidad },
+                success: function (result) {
+                    var cadena = "";
+                    var total = 0;
+                    console.log(result);
+                    $.each(result, function (index, item) {
+                        var subtotal = parseFloat(item.compraDetallePrecio) * parseInt(item.compraDetallecatidad);
+                        total += subtotal;
+                        cadena += "<tr><td>" + item.productoNombre + "</td><td>" + item.compraDetallePrecio + "</td><td>" + item.compraDetallecatidad + "</td></tr>";
+                        console.log(cadena);
+                    });
+                    $("#tbodyVentas").html(cadena);
+                    $("#txttotal").val(total);
+                },
+                error: function (error) {
+
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#tabla1").DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.2/i18n/es-MX.json'
+            }
+        });
+    });
+</script>

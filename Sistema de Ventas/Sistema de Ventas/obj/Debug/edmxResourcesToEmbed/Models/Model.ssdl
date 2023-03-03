@@ -1,0 +1,1242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SistemaVentasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbCargos">
+    <Key>
+      <PropertyRef Name="cargoId" />
+    </Key>
+    <Property Name="cargoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cargoNombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="cargoFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="cargoUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="cargoFechaModificacion" Type="datetime" />
+    <Property Name="cargoUsuarioModificacion" Type="int" />
+    <Property Name="cargoEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCategoria">
+    <Key>
+      <PropertyRef Name="categoriaId" />
+    </Key>
+    <Property Name="categoriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoriaDescripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="categoriaFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="categoriaUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="categoriaFechaModificacion" Type="datetime" />
+    <Property Name="categoriaUsuarioModificacion" Type="int" />
+    <Property Name="categoriaEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbClientes">
+    <Key>
+      <PropertyRef Name="clienteId" />
+    </Key>
+    <Property Name="clienteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="clienteNombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="clienteApellido" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="municipioId" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="clienteDireccionExacta" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="clienteTelefono" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="clienteCorreoElectronico" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="clienteFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="clienteUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="clienteFechaModificacion" Type="datetime" />
+    <Property Name="clienteUsuarioModificacion" Type="int" />
+    <Property Name="clienteEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCompraDetalles">
+    <Key>
+      <PropertyRef Name="compraDetalleId" />
+    </Key>
+    <Property Name="compraDetalleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="compraId" Type="int" Nullable="false" />
+    <Property Name="productoId" Type="int" Nullable="false" />
+    <Property Name="compraDetallecatidad" Type="int" Nullable="false" />
+    <Property Name="compraDetallePrecio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="compraDetalleFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="compraDetalleUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="compraDetalleFechaModificacion" Type="datetime" />
+    <Property Name="compraDetalleUsuarioModificacion" Type="int" />
+    <Property Name="compraDetalleEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCompras">
+    <Key>
+      <PropertyRef Name="compraId" />
+    </Key>
+    <Property Name="compraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proveedorId" Type="int" Nullable="false" />
+    <Property Name="compraFecha" Type="datetime" Nullable="false" />
+    <Property Name="compraFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="compraUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="compraFechaModificacion" Type="datetime" />
+    <Property Name="compraUsuarioModificacion" Type="int" />
+    <Property Name="compraEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbDepartamentos">
+    <Key>
+      <PropertyRef Name="departamentoId" />
+    </Key>
+    <Property Name="departamentoId" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="departamentoNombre" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="departamentoFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="departamentoUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="departamentoFechaModificacion" Type="datetime" />
+    <Property Name="departamentoUsuarioModificacion" Type="int" />
+    <Property Name="departamentoEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbEmpleados">
+    <Key>
+      <PropertyRef Name="empleadoId" />
+    </Key>
+    <Property Name="empleadoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empleadoNombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="empleadoApellido" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="empleadoSexo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="municipioId" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="empleadoDireccionExacta" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="estadoCivilId" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="empleadoTelefono" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="empleadoCorreoElectronico" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="empleadoFechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="empleadoFechaContratacion" Type="date" Nullable="false" />
+    <Property Name="cargoId" Type="int" Nullable="false" />
+    <Property Name="empleadoFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="empleadoUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="empleadoFechaModificacion" Type="datetime" />
+    <Property Name="empleadoUsuarioModificacion" Type="int" />
+    <Property Name="empleadoEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbEstadosCiviles">
+    <Key>
+      <PropertyRef Name="estadoCivilId" />
+    </Key>
+    <Property Name="estadoCivilId" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="estadoCivilNombre" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="estadoCivilFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="estadoCivilUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="estadoCivilFechaModificacion" Type="datetime" />
+    <Property Name="estadoCivilUsuarioModificacion" Type="int" />
+    <Property Name="estadoCivilEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbMetodoPago">
+    <Key>
+      <PropertyRef Name="metodopagoId" />
+    </Key>
+    <Property Name="metodopagoId" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="metodopagoDescripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="metodopagoFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="metodopagoUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="metodopagoFechaModificacion" Type="datetime" />
+    <Property Name="metodopagoUsuarioModificacion" Type="int" />
+    <Property Name="metodopagoEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbMunicipios">
+    <Key>
+      <PropertyRef Name="municipioId" />
+    </Key>
+    <Property Name="municipioId" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="departamentoId" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="municipioNombre" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="municipioFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="municipioUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="municipioFechaModificacion" Type="datetime" />
+    <Property Name="municipioUsuarioModificacion" Type="int" />
+    <Property Name="municipioEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbProductos">
+    <Key>
+      <PropertyRef Name="productoId" />
+    </Key>
+    <Property Name="productoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productoNombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="productoPrecio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="categoriaId" Type="int" Nullable="false" />
+    <Property Name="proveedorid" Type="int" Nullable="false" />
+    <Property Name="productoStock" Type="int" Nullable="false" />
+    <Property Name="productoFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="productoUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="productoFechaModificacion" Type="datetime" />
+    <Property Name="productoUsuarioModificacion" Type="int" />
+    <Property Name="productoEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbProveedores">
+    <Key>
+      <PropertyRef Name="proveedorId" />
+    </Key>
+    <Property Name="proveedorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proveedorNombre" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="municipioId" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="proveedorDireccionExacta" Type="nvarchar" MaxLength="500" />
+    <Property Name="proveedorTelefono" Type="varchar" MaxLength="50" />
+    <Property Name="proveedorEmail" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="proveedorFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="proveedorUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="proveedorFechaModificacion" Type="datetime" />
+    <Property Name="proveedorUsuarioModificacion" Type="int" />
+    <Property Name="proveedorEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbUsuarios">
+    <Key>
+      <PropertyRef Name="usuarioId" />
+    </Key>
+    <Property Name="usuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuarioUsuario" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="usuarioContrasenia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="empleadoId" Type="int" Nullable="false" />
+    <Property Name="usuarioUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="usuarioFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="usuarioUsuarioModificacion" Type="int" />
+    <Property Name="usuarioFechaModificacion" Type="datetime" />
+    <Property Name="usuarioEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbventa">
+    <Key>
+      <PropertyRef Name="ventaId" />
+    </Key>
+    <Property Name="ventaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="clienteId" Type="int" Nullable="false" />
+    <Property Name="ventaFecha" Type="datetime" Nullable="false" />
+    <Property Name="empleadoId" Type="int" Nullable="false" />
+    <Property Name="metodopagoId" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ventaFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="ventaUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="ventaFechaModificacion" Type="datetime" />
+    <Property Name="ventaUsuarioModificacion" Type="int" />
+    <Property Name="ventaEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbventaDetalles">
+    <Key>
+      <PropertyRef Name="ventaDetalle_Id" />
+    </Key>
+    <Property Name="ventaDetalle_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ventaId" Type="int" Nullable="false" />
+    <Property Name="productoId" Type="int" Nullable="false" />
+    <Property Name="ventaDetalle_catidad" Type="int" Nullable="false" />
+    <Property Name="ventaDetalle_Precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ventaDetalle_FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="ventaDetalle_UsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="ventaDetalle_FechaModificacion" Type="datetime" />
+    <Property Name="ventaDetalle_UsuarioModificacion" Type="int" />
+    <Property Name="ventaDetalle_Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbCargos" Type="Self.tbCargos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCargos">
+        <PropertyRef Name="cargoUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbCargos" Type="Self.tbCargos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCargos">
+        <PropertyRef Name="cargoUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaFechaModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbCategoria" Type="Self.tbCategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCategoria">
+        <PropertyRef Name="categoriaUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbCategoria" Type="Self.tbCategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCategoria">
+        <PropertyRef Name="categoriaUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbClientes_dbo_tbMunicipios_municipioId">
+    <End Role="tbMunicipios" Type="Self.tbMunicipios" Multiplicity="1" />
+    <End Role="tbClientes" Type="Self.tbClientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMunicipios">
+        <PropertyRef Name="municipioId" />
+      </Principal>
+      <Dependent Role="tbClientes">
+        <PropertyRef Name="municipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbClientes" Type="Self.tbClientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbClientes">
+        <PropertyRef Name="clienteUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbClientes" Type="Self.tbClientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbClientes">
+        <PropertyRef Name="clienteUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbCompraDetalles" Type="Self.tbCompraDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCompraDetalles">
+        <PropertyRef Name="compraDetalleUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbCompraDetalles" Type="Self.tbCompraDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCompraDetalles">
+        <PropertyRef Name="compraDetalleUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCompraDetalles_tbCompras_compraId">
+    <End Role="tbCompras" Type="Self.tbCompras" Multiplicity="1" />
+    <End Role="tbCompraDetalles" Type="Self.tbCompraDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCompras">
+        <PropertyRef Name="compraId" />
+      </Principal>
+      <Dependent Role="tbCompraDetalles">
+        <PropertyRef Name="compraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCompraDetalles_tbProducto_productoId">
+    <End Role="tbProductos" Type="Self.tbProductos" Multiplicity="1" />
+    <End Role="tbCompraDetalles" Type="Self.tbCompraDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProductos">
+        <PropertyRef Name="productoId" />
+      </Principal>
+      <Dependent Role="tbCompraDetalles">
+        <PropertyRef Name="productoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbCompras" Type="Self.tbCompras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCompras">
+        <PropertyRef Name="compraUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbCompras" Type="Self.tbCompras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbCompras">
+        <PropertyRef Name="compraUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbCompras_tbProveedores_proveedorId">
+    <End Role="tbProveedores" Type="Self.tbProveedores" Multiplicity="1" />
+    <End Role="tbCompras" Type="Self.tbCompras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProveedores">
+        <PropertyRef Name="proveedorId" />
+      </Principal>
+      <Dependent Role="tbCompras">
+        <PropertyRef Name="proveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbDepartamentos" Type="Self.tbDepartamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbDepartamentos">
+        <PropertyRef Name="departamentoUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbDepartamentos" Type="Self.tbDepartamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbDepartamentos">
+        <PropertyRef Name="departamentoUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbEmpleados_dbo_tbCargos_cargoId">
+    <End Role="tbCargos" Type="Self.tbCargos" Multiplicity="1" />
+    <End Role="tbEmpleados" Type="Self.tbEmpleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCargos">
+        <PropertyRef Name="cargoId" />
+      </Principal>
+      <Dependent Role="tbEmpleados">
+        <PropertyRef Name="cargoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbEmpleados_dbo_tbEstadosCiviles_estadoCivilId">
+    <End Role="tbEstadosCiviles" Type="Self.tbEstadosCiviles" Multiplicity="1" />
+    <End Role="tbEmpleados" Type="Self.tbEmpleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEstadosCiviles">
+        <PropertyRef Name="estadoCivilId" />
+      </Principal>
+      <Dependent Role="tbEmpleados">
+        <PropertyRef Name="estadoCivilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbEmpleados_dbo_tbMunicipios_municipioId">
+    <End Role="tbMunicipios" Type="Self.tbMunicipios" Multiplicity="1" />
+    <End Role="tbEmpleados" Type="Self.tbEmpleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMunicipios">
+        <PropertyRef Name="municipioId" />
+      </Principal>
+      <Dependent Role="tbEmpleados">
+        <PropertyRef Name="municipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbEmpleados" Type="Self.tbEmpleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbEmpleados">
+        <PropertyRef Name="empleadoUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbEmpleados" Type="Self.tbEmpleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbEmpleados">
+        <PropertyRef Name="empleadoUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilFechaModificacion_estadoCivilId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbEstadosCiviles" Type="Self.tbEstadosCiviles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbEstadosCiviles">
+        <PropertyRef Name="estadoCivilUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilUsuarioCreacion_estadoCivilId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbEstadosCiviles" Type="Self.tbEstadosCiviles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbEstadosCiviles">
+        <PropertyRef Name="estadoCivilUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbMetodoPago" Type="Self.tbMetodoPago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbMetodoPago">
+        <PropertyRef Name="metodopagoUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbMetodoPago" Type="Self.tbMetodoPago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbMetodoPago">
+        <PropertyRef Name="metodopagoUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbMunicipios" Type="Self.tbMunicipios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbMunicipios">
+        <PropertyRef Name="municipioUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbMunicipios" Type="Self.tbMunicipios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbMunicipios">
+        <PropertyRef Name="municipioUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbProductos" Type="Self.tbProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbProductos">
+        <PropertyRef Name="productoUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbProductos" Type="Self.tbProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbProductos">
+        <PropertyRef Name="productoUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbProductos_tbCategoria_categoriaId">
+    <End Role="tbCategoria" Type="Self.tbCategoria" Multiplicity="1" />
+    <End Role="tbProductos" Type="Self.tbProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCategoria">
+        <PropertyRef Name="categoriaId" />
+      </Principal>
+      <Dependent Role="tbProductos">
+        <PropertyRef Name="categoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbProductos_tbProveedores_proveedorid">
+    <End Role="tbProveedores" Type="Self.tbProveedores" Multiplicity="1" />
+    <End Role="tbProductos" Type="Self.tbProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProveedores">
+        <PropertyRef Name="proveedorId" />
+      </Principal>
+      <Dependent Role="tbProductos">
+        <PropertyRef Name="proveedorid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbProveedores_dbo_tbMunicipios_municipioId">
+    <End Role="tbMunicipios" Type="Self.tbMunicipios" Multiplicity="1" />
+    <End Role="tbProveedores" Type="Self.tbProveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMunicipios">
+        <PropertyRef Name="municipioId" />
+      </Principal>
+      <Dependent Role="tbProveedores">
+        <PropertyRef Name="municipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbproveedores_dbo_tbUsuarios_proveedorUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbProveedores" Type="Self.tbProveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbProveedores">
+        <PropertyRef Name="proveedorUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbProveedores_dbo_tbUsuarios_proveedorUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbProveedores" Type="Self.tbProveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbProveedores">
+        <PropertyRef Name="proveedorUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbUsuarios_dbo_tbEmpleados_empleadoId">
+    <End Role="tbEmpleados" Type="Self.tbEmpleados" Multiplicity="1" />
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEmpleados">
+        <PropertyRef Name="empleadoId" />
+      </Principal>
+      <Dependent Role="tbUsuarios">
+        <PropertyRef Name="empleadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbUsuarios1" Type="Self.tbUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbUsuarios1">
+        <PropertyRef Name="usuarioUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbUsuarios1" Type="Self.tbUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbUsuarios1">
+        <PropertyRef Name="usuarioUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventa_dbo_tbEmpleados_empleadoId">
+    <End Role="tbEmpleados" Type="Self.tbEmpleados" Multiplicity="1" />
+    <End Role="tbventa" Type="Self.tbventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEmpleados">
+        <PropertyRef Name="empleadoId" />
+      </Principal>
+      <Dependent Role="tbventa">
+        <PropertyRef Name="empleadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbventa" Type="Self.tbventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbventa">
+        <PropertyRef Name="ventaUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbventa" Type="Self.tbventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbventa">
+        <PropertyRef Name="ventaUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventa_tbClientes_clienteId">
+    <End Role="tbClientes" Type="Self.tbClientes" Multiplicity="1" />
+    <End Role="tbventa" Type="Self.tbventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbClientes">
+        <PropertyRef Name="clienteId" />
+      </Principal>
+      <Dependent Role="tbventa">
+        <PropertyRef Name="clienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventa_tbMetodoPago_metodopagoId">
+    <End Role="tbMetodoPago" Type="Self.tbMetodoPago" Multiplicity="1" />
+    <End Role="tbventa" Type="Self.tbventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMetodoPago">
+        <PropertyRef Name="metodopagoId" />
+      </Principal>
+      <Dependent Role="tbventa">
+        <PropertyRef Name="metodopagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioCreacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbventaDetalles" Type="Self.tbventaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbventaDetalles">
+        <PropertyRef Name="ventaDetalle_UsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioModificacion_usuarioId">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbventaDetalles" Type="Self.tbventaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="tbventaDetalles">
+        <PropertyRef Name="ventaDetalle_UsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventaDetalles_tbProducto_productoId">
+    <End Role="tbProductos" Type="Self.tbProductos" Multiplicity="1" />
+    <End Role="tbventaDetalles" Type="Self.tbventaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProductos">
+        <PropertyRef Name="productoId" />
+      </Principal>
+      <Dependent Role="tbventaDetalles">
+        <PropertyRef Name="productoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_tbventaDetalles_tbventa_ventaId">
+    <End Role="tbventa" Type="Self.tbventa" Multiplicity="1" />
+    <End Role="tbventaDetalles" Type="Self.tbventaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbventa">
+        <PropertyRef Name="ventaId" />
+      </Principal>
+      <Dependent Role="tbventaDetalles">
+        <PropertyRef Name="ventaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbMunicipios_tbDepartamentos_departamentoId">
+    <End Role="tbDepartamentos" Type="Self.tbDepartamentos" Multiplicity="1" />
+    <End Role="tbMunicipios" Type="Self.tbMunicipios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDepartamentos">
+        <PropertyRef Name="departamentoId" />
+      </Principal>
+      <Dependent Role="tbMunicipios">
+        <PropertyRef Name="departamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="UDP_BorrarCargo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_BorrarCaTegorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_BorrarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_Borrarventa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_BuscarProveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_CambiarContrasenia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrasenia" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UDP_CargarCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="categoriaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_CargarMunicipios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="departamentoId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_CargarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UsuarioId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_ComprasIndex" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_ComprasInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="proveedorId" Type="int" Mode="In" />
+    <Parameter Name="compraUsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_DDLEmpleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_DDLMunicipios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_DetalleEnTabla" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ventaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_DetalleEnTablaCompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_DetalleEnTablaCompraxId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="compraId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EdicionUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuarioId" Type="int" Mode="In" />
+    <Parameter Name="usuarioUsuario" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarCargo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+    <Parameter Name="Cargo" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarCategorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+    <Parameter Name="Categoria" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Apellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarDepartamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdidcion" Type="int" Mode="In" />
+    <Parameter Name="Departamento" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarEmpleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Apellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="Sexo" Type="char" Mode="In" />
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="DireccionExacta" Type="nvarchar" Mode="In" />
+    <Parameter Name="EstadoCivil" Type="char" Mode="In" />
+    <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="Correo" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaNacimiento" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaContaratacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cargo" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarMunicipios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdidcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Precio" Type="decimal" Mode="In" />
+    <Parameter Name="categoria" Type="int" Mode="In" />
+    <Parameter Name="Proveedor" Type="int" Mode="In" />
+    <Parameter Name="Stock" Type="int" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EditarProveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioModificacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarCompraDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="compraDetalleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarDepartamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarEmpleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarMunicipios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEdicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarProveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarVenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ventaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_EliminarVentaDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ventaDetalle_Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_IndexCargos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_IndexCategorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_IndexDepartamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_IndexEmpleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_IndexMunicipios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_IndexUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_IndexventaDetalles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ventaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_Indexventas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_InsertaCategorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="categoriaDescripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="categoriaUsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarCargos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cargo" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarCategorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Categoria" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Apellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarCompraDetalles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productoId" Type="nvarchar" Mode="In" />
+    <Parameter Name="compraDetallecantidad" Type="nvarchar" Mode="In" />
+    <Parameter Name="compraDetalleUsuarioCreacion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarDepartamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DepartamentoId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Departamento" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarEmpleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Apellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="Sexo" Type="char" Mode="In" />
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="DireccionExacta" Type="nvarchar" Mode="In" />
+    <Parameter Name="EstadoCivil" Type="char" Mode="In" />
+    <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="Correo" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaNacimiento" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaContaratacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cargo" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarMunicipios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="Departamento" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Precio" Type="decimal" Mode="In" />
+    <Parameter Name="categoria" Type="int" Mode="In" />
+    <Parameter Name="Proveedor" Type="int" Mode="In" />
+    <Parameter Name="Stock" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarProveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Municipio" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrasenia" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Empleado" Type="int" Mode="In" />
+    <Parameter Name="usuarioCreacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_Insertarventa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClienteId" Type="nvarchar" Mode="In" />
+    <Parameter Name="MetodoPago" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpleadoId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_InsertarventaDetalles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductoId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cantidad" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_LlenarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_LlenarProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrasenia" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UDP_LoginParaEmpleadoId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrasenia" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UDP_MUNICIPIOxMunicipioId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="municipioId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_SelectCargoxId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cargoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UDP_SelectIdVentaMax" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_SelectMunicipiosByDepartamentoId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="departamentoId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_SelectMunicipioxId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="municipioId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UDP_SelectProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UDP_SelectUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuarioUsuario" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="SistemaVentasModelStoreContainer">
+    <EntitySet Name="tbCargos" EntityType="Self.tbCargos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCategoria" EntityType="Self.tbCategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbClientes" EntityType="Self.tbClientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCompraDetalles" EntityType="Self.tbCompraDetalles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCompras" EntityType="Self.tbCompras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDepartamentos" EntityType="Self.tbDepartamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbEmpleados" EntityType="Self.tbEmpleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbEstadosCiviles" EntityType="Self.tbEstadosCiviles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMetodoPago" EntityType="Self.tbMetodoPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMunicipios" EntityType="Self.tbMunicipios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbProductos" EntityType="Self.tbProductos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbProveedores" EntityType="Self.tbProveedores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUsuarios" EntityType="Self.tbUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbventa" EntityType="Self.tbventa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbventaDetalles" EntityType="Self.tbventaDetalles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCargos" EntitySet="tbCargos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCargos" EntitySet="tbCargos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaFechaModificacion_usuarioId" Association="Self.FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaFechaModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCategoria" EntitySet="tbCategoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCategoria" EntitySet="tbCategoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbClientes_dbo_tbMunicipios_municipioId" Association="Self.FK_dbo_tbClientes_dbo_tbMunicipios_municipioId">
+      <End Role="tbMunicipios" EntitySet="tbMunicipios" />
+      <End Role="tbClientes" EntitySet="tbClientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbClientes" EntitySet="tbClientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbClientes" EntitySet="tbClientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompraDetalles" EntitySet="tbCompraDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompraDetalles" EntitySet="tbCompraDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCompraDetalles_tbCompras_compraId" Association="Self.FK_dbo_tbCompraDetalles_tbCompras_compraId">
+      <End Role="tbCompras" EntitySet="tbCompras" />
+      <End Role="tbCompraDetalles" EntitySet="tbCompraDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCompraDetalles_tbProducto_productoId" Association="Self.FK_dbo_tbCompraDetalles_tbProducto_productoId">
+      <End Role="tbProductos" EntitySet="tbProductos" />
+      <End Role="tbCompraDetalles" EntitySet="tbCompraDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompras" EntitySet="tbCompras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompras" EntitySet="tbCompras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbCompras_tbProveedores_proveedorId" Association="Self.FK_dbo_tbCompras_tbProveedores_proveedorId">
+      <End Role="tbProveedores" EntitySet="tbProveedores" />
+      <End Role="tbCompras" EntitySet="tbCompras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbDepartamentos" EntitySet="tbDepartamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbDepartamentos" EntitySet="tbDepartamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbEmpleados_dbo_tbCargos_cargoId" Association="Self.FK_dbo_tbEmpleados_dbo_tbCargos_cargoId">
+      <End Role="tbCargos" EntitySet="tbCargos" />
+      <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbEmpleados_dbo_tbEstadosCiviles_estadoCivilId" Association="Self.FK_dbo_tbEmpleados_dbo_tbEstadosCiviles_estadoCivilId">
+      <End Role="tbEstadosCiviles" EntitySet="tbEstadosCiviles" />
+      <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbEmpleados_dbo_tbMunicipios_municipioId" Association="Self.FK_dbo_tbEmpleados_dbo_tbMunicipios_municipioId">
+      <End Role="tbMunicipios" EntitySet="tbMunicipios" />
+      <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilFechaModificacion_estadoCivilId" Association="Self.FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilFechaModificacion_estadoCivilId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEstadosCiviles" EntitySet="tbEstadosCiviles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilUsuarioCreacion_estadoCivilId" Association="Self.FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilUsuarioCreacion_estadoCivilId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEstadosCiviles" EntitySet="tbEstadosCiviles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMetodoPago" EntitySet="tbMetodoPago" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMetodoPago" EntitySet="tbMetodoPago" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMunicipios" EntitySet="tbMunicipios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMunicipios" EntitySet="tbMunicipios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbProductos" EntitySet="tbProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbProductos" EntitySet="tbProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbProductos_tbCategoria_categoriaId" Association="Self.FK_dbo_tbProductos_tbCategoria_categoriaId">
+      <End Role="tbCategoria" EntitySet="tbCategoria" />
+      <End Role="tbProductos" EntitySet="tbProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbProductos_tbProveedores_proveedorid" Association="Self.FK_dbo_tbProductos_tbProveedores_proveedorid">
+      <End Role="tbProveedores" EntitySet="tbProveedores" />
+      <End Role="tbProductos" EntitySet="tbProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbProveedores_dbo_tbMunicipios_municipioId" Association="Self.FK_dbo_tbProveedores_dbo_tbMunicipios_municipioId">
+      <End Role="tbMunicipios" EntitySet="tbMunicipios" />
+      <End Role="tbProveedores" EntitySet="tbProveedores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbproveedores_dbo_tbUsuarios_proveedorUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbproveedores_dbo_tbUsuarios_proveedorUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbProveedores" EntitySet="tbProveedores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbProveedores_dbo_tbUsuarios_proveedorUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbProveedores_dbo_tbUsuarios_proveedorUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbProveedores" EntitySet="tbProveedores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbUsuarios_dbo_tbEmpleados_empleadoId" Association="Self.FK_dbo_tbUsuarios_dbo_tbEmpleados_empleadoId">
+      <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuarios1" EntitySet="tbUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuarios1" EntitySet="tbUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventa_dbo_tbEmpleados_empleadoId" Association="Self.FK_dbo_tbventa_dbo_tbEmpleados_empleadoId">
+      <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+      <End Role="tbventa" EntitySet="tbventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbventa" EntitySet="tbventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbventa" EntitySet="tbventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventa_tbClientes_clienteId" Association="Self.FK_dbo_tbventa_tbClientes_clienteId">
+      <End Role="tbClientes" EntitySet="tbClientes" />
+      <End Role="tbventa" EntitySet="tbventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventa_tbMetodoPago_metodopagoId" Association="Self.FK_dbo_tbventa_tbMetodoPago_metodopagoId">
+      <End Role="tbMetodoPago" EntitySet="tbMetodoPago" />
+      <End Role="tbventa" EntitySet="tbventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioCreacion_usuarioId" Association="Self.FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioCreacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbventaDetalles" EntitySet="tbventaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioModificacion_usuarioId" Association="Self.FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioModificacion_usuarioId">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbventaDetalles" EntitySet="tbventaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventaDetalles_tbProducto_productoId" Association="Self.FK_dbo_tbventaDetalles_tbProducto_productoId">
+      <End Role="tbProductos" EntitySet="tbProductos" />
+      <End Role="tbventaDetalles" EntitySet="tbventaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_tbventaDetalles_tbventa_ventaId" Association="Self.FK_dbo_tbventaDetalles_tbventa_ventaId">
+      <End Role="tbventa" EntitySet="tbventa" />
+      <End Role="tbventaDetalles" EntitySet="tbventaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbMunicipios_tbDepartamentos_departamentoId" Association="Self.FK_tbMunicipios_tbDepartamentos_departamentoId">
+      <End Role="tbDepartamentos" EntitySet="tbDepartamentos" />
+      <End Role="tbMunicipios" EntitySet="tbMunicipios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

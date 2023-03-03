@@ -1,0 +1,99 @@
+﻿@model Sistema_de_Ventas.Models.tbProductos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-monospace">DETALLES</h2>
+
+<div>
+    <h4 class="text-md-center">Productos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.productoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoNombre)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.productoPrecio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoPrecio)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.productoStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoStock)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.productoFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoFechaCreacion)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.productoFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoFechaModificacion)
+        </dd>
+        <hr />
+        @*<dt>
+            @Html.DisplayNameFor(model => model.productoEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoEstado)
+        </dd>
+        <hr />*@
+        <dt>
+            @Html.DisplayNameFor(model => model.tbCategoria.categoriaDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbCategoria.categoriaDescripcion)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+        @*<hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>*@
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbProveedores.proveedorNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbProveedores.proveedorNombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.productoId }, new { @class = "btn btn-info" }) ||
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default"})
+</p>

@@ -1,0 +1,36 @@
+﻿@model Sistema_de_Ventas.Models.tbCargos
+
+
+<div class="modal fade" id="confirm-Insert-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-Insert-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-Insert-modal-label">Insertar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                <h4>Nombre de cargo</h4>
+                    <div class="col-md-10">
+
+                        <input type="text" name="usuarioUsuario" id="txtUsu" class="form-control" required /> <br />
+                        <label style="color:red" id="VUsu">Ingrese el usuario</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Create" class="btn btn-default" onclick="enviarCRear()" />
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                @<a href="#" id="btn-confirm-Insert" class="btn btn-danger" onclick="DeleteModal()">Eliminar</a>@
+            </div>
+        </div>
+    </div>
+</div>

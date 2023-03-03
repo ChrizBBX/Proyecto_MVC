@@ -1,0 +1,74 @@
+﻿@model Sistema_de_Ventas.Models.tbCargos
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-monospace">BORRAR CARGOS</h2>
+
+<h3>Esta Seguro que desea borrar el cargo?</h3>
+<div>
+    <h4 class="text-md-center">Cargos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cargoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargoNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cargoFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargoFechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cargoFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargoFechaModificacion)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.cargoEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargoEstado)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-defalt" })
+        </div>
+    }
+</div>

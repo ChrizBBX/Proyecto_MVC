@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SistemaVentasModelStoreContainer" CdmEntityContainer="SistemaVentasEntities">
+    <EntitySetMapping Name="tbCargos">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbCargos">
+        <MappingFragment StoreEntitySet="tbCargos">
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="cargoNombre" ColumnName="cargoNombre" />
+          <ScalarProperty Name="cargoFechaCreacion" ColumnName="cargoFechaCreacion" />
+          <ScalarProperty Name="cargoUsuarioCreacion" ColumnName="cargoUsuarioCreacion" />
+          <ScalarProperty Name="cargoFechaModificacion" ColumnName="cargoFechaModificacion" />
+          <ScalarProperty Name="cargoUsuarioModificacion" ColumnName="cargoUsuarioModificacion" />
+          <ScalarProperty Name="cargoEstado" ColumnName="cargoEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCategoria">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbCategoria">
+        <MappingFragment StoreEntitySet="tbCategoria">
+          <ScalarProperty Name="categoriaId" ColumnName="categoriaId" />
+          <ScalarProperty Name="categoriaDescripcion" ColumnName="categoriaDescripcion" />
+          <ScalarProperty Name="categoriaFechaCreacion" ColumnName="categoriaFechaCreacion" />
+          <ScalarProperty Name="categoriaUsuarioCreacion" ColumnName="categoriaUsuarioCreacion" />
+          <ScalarProperty Name="categoriaFechaModificacion" ColumnName="categoriaFechaModificacion" />
+          <ScalarProperty Name="categoriaUsuarioModificacion" ColumnName="categoriaUsuarioModificacion" />
+          <ScalarProperty Name="categoriaEstado" ColumnName="categoriaEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbClientes">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbClientes">
+        <MappingFragment StoreEntitySet="tbClientes">
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="clienteNombre" ColumnName="clienteNombre" />
+          <ScalarProperty Name="clienteApellido" ColumnName="clienteApellido" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="clienteDireccionExacta" ColumnName="clienteDireccionExacta" />
+          <ScalarProperty Name="clienteTelefono" ColumnName="clienteTelefono" />
+          <ScalarProperty Name="clienteCorreoElectronico" ColumnName="clienteCorreoElectronico" />
+          <ScalarProperty Name="clienteFechaCreacion" ColumnName="clienteFechaCreacion" />
+          <ScalarProperty Name="clienteUsuarioCreacion" ColumnName="clienteUsuarioCreacion" />
+          <ScalarProperty Name="clienteFechaModificacion" ColumnName="clienteFechaModificacion" />
+          <ScalarProperty Name="clienteUsuarioModificacion" ColumnName="clienteUsuarioModificacion" />
+          <ScalarProperty Name="clienteEstado" ColumnName="clienteEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCompraDetalles">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbCompraDetalles">
+        <MappingFragment StoreEntitySet="tbCompraDetalles">
+          <ScalarProperty Name="compraDetalleId" ColumnName="compraDetalleId" />
+          <ScalarProperty Name="compraId" ColumnName="compraId" />
+          <ScalarProperty Name="productoId" ColumnName="productoId" />
+          <ScalarProperty Name="compraDetallecatidad" ColumnName="compraDetallecatidad" />
+          <ScalarProperty Name="compraDetallePrecio" ColumnName="compraDetallePrecio" />
+          <ScalarProperty Name="compraDetalleFechaCreacion" ColumnName="compraDetalleFechaCreacion" />
+          <ScalarProperty Name="compraDetalleUsuarioCreacion" ColumnName="compraDetalleUsuarioCreacion" />
+          <ScalarProperty Name="compraDetalleFechaModificacion" ColumnName="compraDetalleFechaModificacion" />
+          <ScalarProperty Name="compraDetalleUsuarioModificacion" ColumnName="compraDetalleUsuarioModificacion" />
+          <ScalarProperty Name="compraDetalleEstado" ColumnName="compraDetalleEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCompras">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbCompras">
+        <MappingFragment StoreEntitySet="tbCompras">
+          <ScalarProperty Name="compraId" ColumnName="compraId" />
+          <ScalarProperty Name="proveedorId" ColumnName="proveedorId" />
+          <ScalarProperty Name="compraFecha" ColumnName="compraFecha" />
+          <ScalarProperty Name="compraFechaCreacion" ColumnName="compraFechaCreacion" />
+          <ScalarProperty Name="compraUsuarioCreacion" ColumnName="compraUsuarioCreacion" />
+          <ScalarProperty Name="compraFechaModificacion" ColumnName="compraFechaModificacion" />
+          <ScalarProperty Name="compraUsuarioModificacion" ColumnName="compraUsuarioModificacion" />
+          <ScalarProperty Name="compraEstado" ColumnName="compraEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDepartamentos">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbDepartamentos">
+        <MappingFragment StoreEntitySet="tbDepartamentos">
+          <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+          <ScalarProperty Name="departamentoNombre" ColumnName="departamentoNombre" />
+          <ScalarProperty Name="departamentoFechaCreacion" ColumnName="departamentoFechaCreacion" />
+          <ScalarProperty Name="departamentoUsuarioCreacion" ColumnName="departamentoUsuarioCreacion" />
+          <ScalarProperty Name="departamentoFechaModificacion" ColumnName="departamentoFechaModificacion" />
+          <ScalarProperty Name="departamentoUsuarioModificacion" ColumnName="departamentoUsuarioModificacion" />
+          <ScalarProperty Name="departamentoEstado" ColumnName="departamentoEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEmpleados">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbEmpleados">
+        <MappingFragment StoreEntitySet="tbEmpleados">
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="empleadoNombre" ColumnName="empleadoNombre" />
+          <ScalarProperty Name="empleadoApellido" ColumnName="empleadoApellido" />
+          <ScalarProperty Name="empleadoSexo" ColumnName="empleadoSexo" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="empleadoDireccionExacta" ColumnName="empleadoDireccionExacta" />
+          <ScalarProperty Name="estadoCivilId" ColumnName="estadoCivilId" />
+          <ScalarProperty Name="empleadoTelefono" ColumnName="empleadoTelefono" />
+          <ScalarProperty Name="empleadoCorreoElectronico" ColumnName="empleadoCorreoElectronico" />
+          <ScalarProperty Name="empleadoFechaNacimiento" ColumnName="empleadoFechaNacimiento" />
+          <ScalarProperty Name="empleadoFechaContratacion" ColumnName="empleadoFechaContratacion" />
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="empleadoFechaCreacion" ColumnName="empleadoFechaCreacion" />
+          <ScalarProperty Name="empleadoUsuarioCreacion" ColumnName="empleadoUsuarioCreacion" />
+          <ScalarProperty Name="empleadoFechaModificacion" ColumnName="empleadoFechaModificacion" />
+          <ScalarProperty Name="empleadoUsuarioModificacion" ColumnName="empleadoUsuarioModificacion" />
+          <ScalarProperty Name="empleadoEstado" ColumnName="empleadoEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEstadosCiviles">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbEstadosCiviles">
+        <MappingFragment StoreEntitySet="tbEstadosCiviles">
+          <ScalarProperty Name="estadoCivilId" ColumnName="estadoCivilId" />
+          <ScalarProperty Name="estadoCivilNombre" ColumnName="estadoCivilNombre" />
+          <ScalarProperty Name="estadoCivilFechaCreacion" ColumnName="estadoCivilFechaCreacion" />
+          <ScalarProperty Name="estadoCivilUsuarioCreacion" ColumnName="estadoCivilUsuarioCreacion" />
+          <ScalarProperty Name="estadoCivilFechaModificacion" ColumnName="estadoCivilFechaModificacion" />
+          <ScalarProperty Name="estadoCivilUsuarioModificacion" ColumnName="estadoCivilUsuarioModificacion" />
+          <ScalarProperty Name="estadoCivilEstado" ColumnName="estadoCivilEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMetodoPago">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbMetodoPago">
+        <MappingFragment StoreEntitySet="tbMetodoPago">
+          <ScalarProperty Name="metodopagoId" ColumnName="metodopagoId" />
+          <ScalarProperty Name="metodopagoDescripcion" ColumnName="metodopagoDescripcion" />
+          <ScalarProperty Name="metodopagoFechaCreacion" ColumnName="metodopagoFechaCreacion" />
+          <ScalarProperty Name="metodopagoUsuarioCreacion" ColumnName="metodopagoUsuarioCreacion" />
+          <ScalarProperty Name="metodopagoFechaModificacion" ColumnName="metodopagoFechaModificacion" />
+          <ScalarProperty Name="metodopagoUsuarioModificacion" ColumnName="metodopagoUsuarioModificacion" />
+          <ScalarProperty Name="metodopagoEstado" ColumnName="metodopagoEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMunicipios">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbMunicipios">
+        <MappingFragment StoreEntitySet="tbMunicipios">
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+          <ScalarProperty Name="municipioFechaCreacion" ColumnName="municipioFechaCreacion" />
+          <ScalarProperty Name="municipioUsuarioCreacion" ColumnName="municipioUsuarioCreacion" />
+          <ScalarProperty Name="municipioFechaModificacion" ColumnName="municipioFechaModificacion" />
+          <ScalarProperty Name="municipioUsuarioModificacion" ColumnName="municipioUsuarioModificacion" />
+          <ScalarProperty Name="municipioEstado" ColumnName="municipioEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductos">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbProductos">
+        <MappingFragment StoreEntitySet="tbProductos">
+          <ScalarProperty Name="productoId" ColumnName="productoId" />
+          <ScalarProperty Name="productoNombre" ColumnName="productoNombre" />
+          <ScalarProperty Name="productoPrecio" ColumnName="productoPrecio" />
+          <ScalarProperty Name="categoriaId" ColumnName="categoriaId" />
+          <ScalarProperty Name="proveedorid" ColumnName="proveedorid" />
+          <ScalarProperty Name="productoStock" ColumnName="productoStock" />
+          <ScalarProperty Name="productoFechaCreacion" ColumnName="productoFechaCreacion" />
+          <ScalarProperty Name="productoUsuarioCreacion" ColumnName="productoUsuarioCreacion" />
+          <ScalarProperty Name="productoFechaModificacion" ColumnName="productoFechaModificacion" />
+          <ScalarProperty Name="productoUsuarioModificacion" ColumnName="productoUsuarioModificacion" />
+          <ScalarProperty Name="productoEstado" ColumnName="productoEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProveedores">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbProveedores">
+        <MappingFragment StoreEntitySet="tbProveedores">
+          <ScalarProperty Name="proveedorId" ColumnName="proveedorId" />
+          <ScalarProperty Name="proveedorNombre" ColumnName="proveedorNombre" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="proveedorDireccionExacta" ColumnName="proveedorDireccionExacta" />
+          <ScalarProperty Name="proveedorTelefono" ColumnName="proveedorTelefono" />
+          <ScalarProperty Name="proveedorEmail" ColumnName="proveedorEmail" />
+          <ScalarProperty Name="proveedorFechaCreacion" ColumnName="proveedorFechaCreacion" />
+          <ScalarProperty Name="proveedorUsuarioCreacion" ColumnName="proveedorUsuarioCreacion" />
+          <ScalarProperty Name="proveedorFechaModificacion" ColumnName="proveedorFechaModificacion" />
+          <ScalarProperty Name="proveedorUsuarioModificacion" ColumnName="proveedorUsuarioModificacion" />
+          <ScalarProperty Name="proveedorEstado" ColumnName="proveedorEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUsuarios">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbUsuarios">
+        <MappingFragment StoreEntitySet="tbUsuarios">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="usuarioUsuario" ColumnName="usuarioUsuario" />
+          <ScalarProperty Name="usuarioContrasenia" ColumnName="usuarioContrasenia" />
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="usuarioUsuarioCreacion" ColumnName="usuarioUsuarioCreacion" />
+          <ScalarProperty Name="usuarioFechaCreacion" ColumnName="usuarioFechaCreacion" />
+          <ScalarProperty Name="usuarioUsuarioModificacion" ColumnName="usuarioUsuarioModificacion" />
+          <ScalarProperty Name="usuarioFechaModificacion" ColumnName="usuarioFechaModificacion" />
+          <ScalarProperty Name="usuarioEstado" ColumnName="usuarioEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbventa">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbventa">
+        <MappingFragment StoreEntitySet="tbventa">
+          <ScalarProperty Name="ventaId" ColumnName="ventaId" />
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="ventaFecha" ColumnName="ventaFecha" />
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="metodopagoId" ColumnName="metodopagoId" />
+          <ScalarProperty Name="ventaFechaCreacion" ColumnName="ventaFechaCreacion" />
+          <ScalarProperty Name="ventaUsuarioCreacion" ColumnName="ventaUsuarioCreacion" />
+          <ScalarProperty Name="ventaFechaModificacion" ColumnName="ventaFechaModificacion" />
+          <ScalarProperty Name="ventaUsuarioModificacion" ColumnName="ventaUsuarioModificacion" />
+          <ScalarProperty Name="ventaEstado" ColumnName="ventaEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UDP_BorrarCargo" FunctionName="SistemaVentasModel.Store.UDP_BorrarCargo" />
+    <FunctionImportMapping FunctionImportName="UDP_BorrarCaTegorias" FunctionName="SistemaVentasModel.Store.UDP_BorrarCaTegorias" />
+    <FunctionImportMapping FunctionImportName="UDP_BorrarUsuario" FunctionName="SistemaVentasModel.Store.UDP_BorrarUsuario" />
+    <FunctionImportMapping FunctionImportName="UDP_Borrarventa" FunctionName="SistemaVentasModel.Store.UDP_Borrarventa" />
+    <FunctionImportMapping FunctionImportName="UDP_BuscarProveedores" FunctionName="SistemaVentasModel.Store.UDP_BuscarProveedores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_BuscarProveedores_Result">
+          <ScalarProperty Name="proveedorId" ColumnName="proveedorId" />
+          <ScalarProperty Name="proveedorNombre" ColumnName="proveedorNombre" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+          <ScalarProperty Name="proveedorDireccionExacta" ColumnName="proveedorDireccionExacta" />
+          <ScalarProperty Name="proveedorTelefono" ColumnName="proveedorTelefono" />
+          <ScalarProperty Name="proveedorEmail" ColumnName="proveedorEmail" />
+          <ScalarProperty Name="proveedorFechaCreacion" ColumnName="proveedorFechaCreacion" />
+          <ScalarProperty Name="proveedorUsuarioCreacion" ColumnName="proveedorUsuarioCreacion" />
+          <ScalarProperty Name="proveedorFechaModificacion" ColumnName="proveedorFechaModificacion" />
+          <ScalarProperty Name="proveedorUsuarioModificacion" ColumnName="proveedorUsuarioModificacion" />
+          <ScalarProperty Name="proveedorEstado" ColumnName="proveedorEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_CambiarContrasenia" FunctionName="SistemaVentasModel.Store.UDP_CambiarContrasenia" />
+    <FunctionImportMapping FunctionImportName="UDP_ComprasIndex" FunctionName="SistemaVentasModel.Store.UDP_ComprasIndex">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_ComprasIndex_Result">
+          <ScalarProperty Name="compraId" ColumnName="compraId" />
+          <ScalarProperty Name="proveedorId" ColumnName="proveedorId" />
+          <ScalarProperty Name="compraFecha" ColumnName="compraFecha" />
+          <ScalarProperty Name="compraFechaCreacion" ColumnName="compraFechaCreacion" />
+          <ScalarProperty Name="compraUsuarioCreacion" ColumnName="compraUsuarioCreacion" />
+          <ScalarProperty Name="compraFechaModificacion" ColumnName="compraFechaModificacion" />
+          <ScalarProperty Name="compraUsuarioModificacion" ColumnName="compraUsuarioModificacion" />
+          <ScalarProperty Name="compraEstado" ColumnName="compraEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_ComprasInsert" FunctionName="SistemaVentasModel.Store.UDP_ComprasInsert" />
+    <FunctionImportMapping FunctionImportName="UDP_EditarCargo" FunctionName="SistemaVentasModel.Store.UDP_EditarCargo" />
+    <FunctionImportMapping FunctionImportName="UDP_EditarClientes" FunctionName="SistemaVentasModel.Store.UDP_EditarClientes" />
+    <FunctionImportMapping FunctionImportName="UDP_EditarEmpleados" FunctionName="SistemaVentasModel.Store.UDP_EditarEmpleados" />
+    <FunctionImportMapping FunctionImportName="UDP_EditarProducto" FunctionName="SistemaVentasModel.Store.UDP_EditarProducto" />
+    <FunctionImportMapping FunctionImportName="UDP_EditarProveedores" FunctionName="SistemaVentasModel.Store.UDP_EditarProveedores" />
+    <FunctionImportMapping FunctionImportName="UDP_EliminarClientes" FunctionName="SistemaVentasModel.Store.UDP_EliminarClientes" />
+    <FunctionImportMapping FunctionImportName="UDP_EliminarEmpleados" FunctionName="SistemaVentasModel.Store.UDP_EliminarEmpleados" />
+    <FunctionImportMapping FunctionImportName="UDP_EliminarProducto" FunctionName="SistemaVentasModel.Store.UDP_EliminarProducto" />
+    <FunctionImportMapping FunctionImportName="UDP_EliminarProveedores" FunctionName="SistemaVentasModel.Store.UDP_EliminarProveedores" />
+    <FunctionImportMapping FunctionImportName="UDP_IndexCargos" FunctionName="SistemaVentasModel.Store.UDP_IndexCargos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_IndexCargos_Result">
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="cargoNombre" ColumnName="cargoNombre" />
+          <ScalarProperty Name="cargoFechaCreacion" ColumnName="cargoFechaCreacion" />
+          <ScalarProperty Name="cargoUsuarioCreacion" ColumnName="cargoUsuarioCreacion" />
+          <ScalarProperty Name="cargoFechaModificacion" ColumnName="cargoFechaModificacion" />
+          <ScalarProperty Name="cargoUsuarioModificacion" ColumnName="cargoUsuarioModificacion" />
+          <ScalarProperty Name="cargoEstado" ColumnName="cargoEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_IndexCategorias" FunctionName="SistemaVentasModel.Store.UDP_IndexCategorias">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_IndexCategorias_Result">
+          <ScalarProperty Name="categoriaId" ColumnName="categoriaId" />
+          <ScalarProperty Name="categoriaDescripcion" ColumnName="categoriaDescripcion" />
+          <ScalarProperty Name="categoriaFechaCreacion" ColumnName="categoriaFechaCreacion" />
+          <ScalarProperty Name="categoriaUsuarioCreacion" ColumnName="categoriaUsuarioCreacion" />
+          <ScalarProperty Name="categoriaFechaModificacion" ColumnName="categoriaFechaModificacion" />
+          <ScalarProperty Name="categoriaUsuarioModificacion" ColumnName="categoriaUsuarioModificacion" />
+          <ScalarProperty Name="categoriaEstado" ColumnName="categoriaEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_IndexEmpleados" FunctionName="SistemaVentasModel.Store.UDP_IndexEmpleados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_IndexEmpleados_Result">
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="empleadoNombre" ColumnName="empleadoNombre" />
+          <ScalarProperty Name="empleadoApellido" ColumnName="empleadoApellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="empleadoSexo" ColumnName="empleadoSexo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="empleadoDireccionExacta" ColumnName="empleadoDireccionExacta" />
+          <ScalarProperty Name="estadoCivilId" ColumnName="estadoCivilId" />
+          <ScalarProperty Name="estadoCivilNombre" ColumnName="estadoCivilNombre" />
+          <ScalarProperty Name="empleadoTelefono" ColumnName="empleadoTelefono" />
+          <ScalarProperty Name="empleadoCorreoElectronico" ColumnName="empleadoCorreoElectronico" />
+          <ScalarProperty Name="empleadoFechaNacimiento" ColumnName="empleadoFechaNacimiento" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="empleadoFechaContratacion" ColumnName="empleadoFechaContratacion" />
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="cargoNombre" ColumnName="cargoNombre" />
+          <ScalarProperty Name="empleadoFechaCreacion" ColumnName="empleadoFechaCreacion" />
+          <ScalarProperty Name="empleadoUsuarioCreacion" ColumnName="empleadoUsuarioCreacion" />
+          <ScalarProperty Name="empleadoFechaModificacion" ColumnName="empleadoFechaModificacion" />
+          <ScalarProperty Name="empleadoUsuarioModificacion" ColumnName="empleadoUsuarioModificacion" />
+          <ScalarProperty Name="empleadoEstado" ColumnName="empleadoEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_IndexUsuario" FunctionName="SistemaVentasModel.Store.UDP_IndexUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_IndexUsuario_Result">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="usuarioUsuario" ColumnName="usuarioUsuario" />
+          <ScalarProperty Name="usuarioContrasenia" ColumnName="usuarioContrasenia" />
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="empleadoNombre" ColumnName="empleadoNombre" />
+          <ScalarProperty Name="usuarioUsuarioCreacion" ColumnName="usuarioUsuarioCreacion" />
+          <ScalarProperty Name="usuarioFechaCreacion" ColumnName="usuarioFechaCreacion" />
+          <ScalarProperty Name="usuarioUsuarioModificacion" ColumnName="usuarioUsuarioModificacion" />
+          <ScalarProperty Name="usuarioFechaModificacion" ColumnName="usuarioFechaModificacion" />
+          <ScalarProperty Name="usuarioEstado" ColumnName="usuarioEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_IndexventaDetalles" FunctionName="SistemaVentasModel.Store.UDP_IndexventaDetalles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_IndexventaDetalles_Result">
+          <ScalarProperty Name="ventaDetalle_Id" ColumnName="ventaDetalle_Id" />
+          <ScalarProperty Name="ventaId" ColumnName="ventaId" />
+          <ScalarProperty Name="ventaFecha" ColumnName="ventaFecha" />
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="metodoPagoId" ColumnName="metodoPagoId" />
+          <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+          <ScalarProperty Name="nombreEmpleado" ColumnName="nombreEmpleado" />
+          <ScalarProperty Name="productoId" ColumnName="productoId" />
+          <ScalarProperty Name="productoNombre" ColumnName="productoNombre" />
+          <ScalarProperty Name="proveedorNombre" ColumnName="proveedorNombre" />
+          <ScalarProperty Name="metodoPagoDescripcion" ColumnName="metodoPagoDescripcion" />
+          <ScalarProperty Name="ventaDetalle_catidad" ColumnName="ventaDetalle_catidad" />
+          <ScalarProperty Name="ventaDetalle_Precio" ColumnName="ventaDetalle_Precio" />
+          <ScalarProperty Name="productoStock" ColumnName="productoStock" />
+          <ScalarProperty Name="CantidadPrecio" ColumnName="CantidadPrecio" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="ventaDetalle_FechaCreacion" ColumnName="ventaDetalle_FechaCreacion" />
+          <ScalarProperty Name="ventaDetalle_UsuarioCreacion" ColumnName="ventaDetalle_UsuarioCreacion" />
+          <ScalarProperty Name="ventaDetalle_FechaModificacion" ColumnName="ventaDetalle_FechaModificacion" />
+          <ScalarProperty Name="ventaDetalle_UsuarioModificacion" ColumnName="ventaDetalle_UsuarioModificacion" />
+          <ScalarProperty Name="ventaDetalle_Estado" ColumnName="ventaDetalle_Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_Indexventas" FunctionName="SistemaVentasModel.Store.UDP_Indexventas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_Indexventas_Result">
+          <ScalarProperty Name="ventaId" ColumnName="ventaId" />
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+          <ScalarProperty Name="ventaFecha" ColumnName="ventaFecha" />
+          <ScalarProperty Name="empleadoid" ColumnName="empleadoid" />
+          <ScalarProperty Name="nombreEmpleado" ColumnName="nombreEmpleado" />
+          <ScalarProperty Name="metodoPagoId" ColumnName="metodoPagoId" />
+          <ScalarProperty Name="metodoPagoDescripcion" ColumnName="metodoPagoDescripcion" />
+          <ScalarProperty Name="ventaFechaCreacion" ColumnName="ventaFechaCreacion" />
+          <ScalarProperty Name="ventaUsuarioCreacion" ColumnName="ventaUsuarioCreacion" />
+          <ScalarProperty Name="ventaFechaModificacion" ColumnName="ventaFechaModificacion" />
+          <ScalarProperty Name="ventaUsuarioModificacion" ColumnName="ventaUsuarioModificacion" />
+          <ScalarProperty Name="ventaEstado" ColumnName="ventaEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_InsertarCargos" FunctionName="SistemaVentasModel.Store.UDP_InsertarCargos" />
+    <FunctionImportMapping FunctionImportName="UDP_InsertarCategorias" FunctionName="SistemaVentasModel.Store.UDP_InsertarCategorias" />
+    <FunctionImportMapping FunctionImportName="UDP_InsertarClientes" FunctionName="SistemaVentasModel.Store.UDP_InsertarClientes" />
+    <FunctionImportMapping FunctionImportName="UDP_InsertarEmpleados" FunctionName="SistemaVentasModel.Store.UDP_InsertarEmpleados" />
+    <FunctionImportMapping FunctionImportName="UDP_InsertarProductos" FunctionName="SistemaVentasModel.Store.UDP_InsertarProductos" />
+    <FunctionImportMapping FunctionImportName="UDP_InsertarProveedores" FunctionName="SistemaVentasModel.Store.UDP_InsertarProveedores" />
+    <FunctionImportMapping FunctionImportName="UDP_Insertarventa" FunctionName="SistemaVentasModel.Store.UDP_Insertarventa" />
+    <FunctionImportMapping FunctionImportName="UDP_LlenarCliente" FunctionName="SistemaVentasModel.Store.UDP_LlenarCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_LlenarCliente_Result">
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="clienteNombre" ColumnName="clienteNombre" />
+          <ScalarProperty Name="clienteApellido" ColumnName="clienteApellido" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+          <ScalarProperty Name="clienteDireccionExacta" ColumnName="clienteDireccionExacta" />
+          <ScalarProperty Name="clienteTelefono" ColumnName="clienteTelefono" />
+          <ScalarProperty Name="clienteCorreoElectronico" ColumnName="clienteCorreoElectronico" />
+          <ScalarProperty Name="clienteFechaCreacion" ColumnName="clienteFechaCreacion" />
+          <ScalarProperty Name="clienteUsuarioCreacion" ColumnName="clienteUsuarioCreacion" />
+          <ScalarProperty Name="clienteFechaModificacion" ColumnName="clienteFechaModificacion" />
+          <ScalarProperty Name="clienteUsuarioModificacion" ColumnName="clienteUsuarioModificacion" />
+          <ScalarProperty Name="clienteEstado" ColumnName="clienteEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_LlenarProductos" FunctionName="SistemaVentasModel.Store.UDP_LlenarProductos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_LlenarProductos_Result">
+          <ScalarProperty Name="productoId" ColumnName="productoId" />
+          <ScalarProperty Name="productoNombre" ColumnName="productoNombre" />
+          <ScalarProperty Name="productoPrecio" ColumnName="productoPrecio" />
+          <ScalarProperty Name="categoriaId" ColumnName="categoriaId" />
+          <ScalarProperty Name="categoriaDescripcion" ColumnName="categoriaDescripcion" />
+          <ScalarProperty Name="proveedorId" ColumnName="proveedorId" />
+          <ScalarProperty Name="proveedorNombre" ColumnName="proveedorNombre" />
+          <ScalarProperty Name="productoStock" ColumnName="productoStock" />
+          <ScalarProperty Name="productoFechaCreacion" ColumnName="productoFechaCreacion" />
+          <ScalarProperty Name="productoUsuarioCreacion" ColumnName="productoUsuarioCreacion" />
+          <ScalarProperty Name="productoFechaModificacion" ColumnName="productoFechaModificacion" />
+          <ScalarProperty Name="productoUsuarioModificacion" ColumnName="productoUsuarioModificacion" />
+          <ScalarProperty Name="productoEstado" ColumnName="productoEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_Login" FunctionName="SistemaVentasModel.Store.UDP_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_Login_Result">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="usuarioUsuario" ColumnName="usuarioUsuario" />
+          <ScalarProperty Name="usuarioContrasenia" ColumnName="usuarioContrasenia" />
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="empleadoNombre" ColumnName="empleadoNombre" />
+          <ScalarProperty Name="usuarioUsuarioCreacion" ColumnName="usuarioUsuarioCreacion" />
+          <ScalarProperty Name="usuarioFechaCreacion" ColumnName="usuarioFechaCreacion" />
+          <ScalarProperty Name="usuarioUsuarioModificacion" ColumnName="usuarioUsuarioModificacion" />
+          <ScalarProperty Name="usuarioFechaModificacion" ColumnName="usuarioFechaModificacion" />
+          <ScalarProperty Name="usuarioEstado" ColumnName="usuarioEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbventaDetalles">
+      <EntityTypeMapping TypeName="SistemaVentasModel.tbventaDetalles">
+        <MappingFragment StoreEntitySet="tbventaDetalles">
+          <ScalarProperty Name="ventaDetalle_Estado" ColumnName="ventaDetalle_Estado" />
+          <ScalarProperty Name="ventaDetalle_UsuarioModificacion" ColumnName="ventaDetalle_UsuarioModificacion" />
+          <ScalarProperty Name="ventaDetalle_FechaModificacion" ColumnName="ventaDetalle_FechaModificacion" />
+          <ScalarProperty Name="ventaDetalle_UsuarioCreacion" ColumnName="ventaDetalle_UsuarioCreacion" />
+          <ScalarProperty Name="ventaDetalle_FechaCreacion" ColumnName="ventaDetalle_FechaCreacion" />
+          <ScalarProperty Name="ventaDetalle_Precio" ColumnName="ventaDetalle_Precio" />
+          <ScalarProperty Name="ventaDetalle_catidad" ColumnName="ventaDetalle_catidad" />
+          <ScalarProperty Name="productoId" ColumnName="productoId" />
+          <ScalarProperty Name="ventaId" ColumnName="ventaId" />
+          <ScalarProperty Name="ventaDetalle_Id" ColumnName="ventaDetalle_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UDP_SelectProductos" FunctionName="SistemaVentasModel.Store.UDP_SelectProductos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_SelectProductos_Result">
+          <ScalarProperty Name="productoId" ColumnName="productoId" />
+          <ScalarProperty Name="productoNombre" ColumnName="productoNombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_SelectMunicipiosByDepartamentoId1" FunctionName="SistemaVentasModel.Store.UDP_SelectMunicipiosByDepartamentoId" />
+    <FunctionImportMapping FunctionImportName="UDP_SelectIdVentaMax3" FunctionName="SistemaVentasModel.Store.UDP_SelectIdVentaMax" />
+    <FunctionImportMapping FunctionImportName="UDP_EliminarVenta" FunctionName="SistemaVentasModel.Store.UDP_EliminarVenta" />
+    <FunctionImportMapping FunctionImportName="UDP_SelectIdVentaMax" FunctionName="SistemaVentasModel.Store.UDP_SelectIdVentaMax">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_SelectIdVentaMax_Result">
+          <ScalarProperty Name="clientemax" ColumnName="clientemax" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_InsertarventaDetalles" FunctionName="SistemaVentasModel.Store.UDP_InsertarventaDetalles" />
+    <FunctionImportMapping FunctionImportName="UDP_CargarMunicipios" FunctionName="SistemaVentasModel.Store.UDP_CargarMunicipios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_CargarMunicipios_Result">
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_DetalleEnTabla" FunctionName="SistemaVentasModel.Store.UDP_DetalleEnTabla">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_DetalleEnTabla_Result6">
+          <ScalarProperty Name="ventaDetalle_Id" ColumnName="ventaDetalle_Id" />
+          <ScalarProperty Name="productoNombre" ColumnName="productoNombre" />
+          <ScalarProperty Name="ventaDetalle_Precio" ColumnName="ventaDetalle_Precio" />
+          <ScalarProperty Name="ventaDetalle_catidad" ColumnName="ventaDetalle_catidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_EliminarVentaDetalle" FunctionName="SistemaVentasModel.Store.UDP_EliminarVentaDetalle" />
+    <FunctionImportMapping FunctionImportName="UDP_DetalleEnTablaCompra" FunctionName="SistemaVentasModel.Store.UDP_DetalleEnTablaCompra">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_DetalleEnTablaCompra_Result">
+          <ScalarProperty Name="compraDetalleId" ColumnName="compraDetalleId" />
+          <ScalarProperty Name="productoNombre" ColumnName="productoNombre" />
+          <ScalarProperty Name="compraDetallePrecio" ColumnName="compraDetallePrecio" />
+          <ScalarProperty Name="compraDetallecatidad" ColumnName="compraDetallecatidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_InsertarCompraDetalles" FunctionName="SistemaVentasModel.Store.UDP_InsertarCompraDetalles" />
+    <FunctionImportMapping FunctionImportName="UDP_DetalleEnTablaCompraxId" FunctionName="SistemaVentasModel.Store.UDP_DetalleEnTablaCompraxId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_DetalleEnTablaCompraxId_Result">
+          <ScalarProperty Name="compraDetalleId" ColumnName="compraDetalleId" />
+          <ScalarProperty Name="productoNombre" ColumnName="productoNombre" />
+          <ScalarProperty Name="compraDetallePrecio" ColumnName="compraDetallePrecio" />
+          <ScalarProperty Name="compraDetallecatidad" ColumnName="compraDetallecatidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_EliminarCompraDetalle" FunctionName="SistemaVentasModel.Store.UDP_EliminarCompraDetalle" />
+    <FunctionImportMapping FunctionImportName="UDP_SelectUsuario" FunctionName="SistemaVentasModel.Store.UDP_SelectUsuario" />
+    <FunctionImportMapping FunctionImportName="UDP_EditarDepartamentos" FunctionName="SistemaVentasModel.Store.UDP_EditarDepartamentos" />
+    <FunctionImportMapping FunctionImportName="UDP_EliminarDepartamentos" FunctionName="SistemaVentasModel.Store.UDP_EliminarDepartamentos" />
+    <FunctionImportMapping FunctionImportName="UDP_EliminarMunicipios" FunctionName="SistemaVentasModel.Store.UDP_EliminarMunicipios" />
+    <FunctionImportMapping FunctionImportName="UDP_IndexDepartamentos" FunctionName="SistemaVentasModel.Store.UDP_IndexDepartamentos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_IndexDepartamentos_Result">
+          <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+          <ScalarProperty Name="departamentoNombre" ColumnName="departamentoNombre" />
+          <ScalarProperty Name="departamentoFechaCreacion" ColumnName="departamentoFechaCreacion" />
+          <ScalarProperty Name="departamentoUsuarioCreacion" ColumnName="departamentoUsuarioCreacion" />
+          <ScalarProperty Name="departamentoFechaModificacion" ColumnName="departamentoFechaModificacion" />
+          <ScalarProperty Name="departamentoUsuarioModificacion" ColumnName="departamentoUsuarioModificacion" />
+          <ScalarProperty Name="departamentoEstado" ColumnName="departamentoEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_IndexMunicipios" FunctionName="SistemaVentasModel.Store.UDP_IndexMunicipios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_IndexMunicipios_Result">
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+          <ScalarProperty Name="municipioFechaCreacion" ColumnName="municipioFechaCreacion" />
+          <ScalarProperty Name="municipioUsuarioCreacion" ColumnName="municipioUsuarioCreacion" />
+          <ScalarProperty Name="municipioFechaModificacion" ColumnName="municipioFechaModificacion" />
+          <ScalarProperty Name="municipioUsuarioModificacion" ColumnName="municipioUsuarioModificacion" />
+          <ScalarProperty Name="municipioEstado" ColumnName="municipioEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_InsertaCategorias" FunctionName="SistemaVentasModel.Store.UDP_InsertaCategorias" />
+    <FunctionImportMapping FunctionImportName="UDP_DDLEmpleados" FunctionName="SistemaVentasModel.Store.UDP_DDLEmpleados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_DDLEmpleados_Result">
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="empleadoNombre" ColumnName="empleadoNombre" />
+          <ScalarProperty Name="empleadoApellido" ColumnName="empleadoApellido" />
+          <ScalarProperty Name="empleadoSexo" ColumnName="empleadoSexo" />
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="empleadoDireccionExacta" ColumnName="empleadoDireccionExacta" />
+          <ScalarProperty Name="estadoCivilId" ColumnName="estadoCivilId" />
+          <ScalarProperty Name="empleadoTelefono" ColumnName="empleadoTelefono" />
+          <ScalarProperty Name="empleadoCorreoElectronico" ColumnName="empleadoCorreoElectronico" />
+          <ScalarProperty Name="empleadoFechaNacimiento" ColumnName="empleadoFechaNacimiento" />
+          <ScalarProperty Name="empleadoFechaContratacion" ColumnName="empleadoFechaContratacion" />
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="empleadoFechaCreacion" ColumnName="empleadoFechaCreacion" />
+          <ScalarProperty Name="empleadoUsuarioCreacion" ColumnName="empleadoUsuarioCreacion" />
+          <ScalarProperty Name="empleadoFechaModificacion" ColumnName="empleadoFechaModificacion" />
+          <ScalarProperty Name="empleadoUsuarioModificacion" ColumnName="empleadoUsuarioModificacion" />
+          <ScalarProperty Name="empleadoEstado" ColumnName="empleadoEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_CargarUsuarios" FunctionName="SistemaVentasModel.Store.UDP_CargarUsuarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_CargarUsuarios_Result">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="usuarioUsuario" ColumnName="usuarioUsuario" />
+          <ScalarProperty Name="usuarioContrasenia" ColumnName="usuarioContrasenia" />
+          <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+          <ScalarProperty Name="usuarioUsuarioCreacion" ColumnName="usuarioUsuarioCreacion" />
+          <ScalarProperty Name="usuarioFechaCreacion" ColumnName="usuarioFechaCreacion" />
+          <ScalarProperty Name="usuarioUsuarioModificacion" ColumnName="usuarioUsuarioModificacion" />
+          <ScalarProperty Name="usuarioFechaModificacion" ColumnName="usuarioFechaModificacion" />
+          <ScalarProperty Name="usuarioEstado" ColumnName="usuarioEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_EdicionUsuario" FunctionName="SistemaVentasModel.Store.UDP_EdicionUsuario" />
+    <FunctionImportMapping FunctionImportName="UDP_InsertarUsuario" FunctionName="SistemaVentasModel.Store.UDP_InsertarUsuario" />
+    <FunctionImportMapping FunctionImportName="UDP_SelectMunicipioxId" FunctionName="SistemaVentasModel.Store.UDP_SelectMunicipioxId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_SelectMunicipioxId_Result">
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+          <ScalarProperty Name="municipioFechaCreacion" ColumnName="municipioFechaCreacion" />
+          <ScalarProperty Name="municipioUsuarioCreacion" ColumnName="municipioUsuarioCreacion" />
+          <ScalarProperty Name="municipioFechaModificacion" ColumnName="municipioFechaModificacion" />
+          <ScalarProperty Name="municipioUsuarioModificacion" ColumnName="municipioUsuarioModificacion" />
+          <ScalarProperty Name="municipioEstado" ColumnName="municipioEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_EditarMunicipios" FunctionName="SistemaVentasModel.Store.UDP_EditarMunicipios" />
+    <FunctionImportMapping FunctionImportName="UDP_InsertarMunicipios" FunctionName="SistemaVentasModel.Store.UDP_InsertarMunicipios" />
+    <FunctionImportMapping FunctionImportName="UDP_LoginParaEmpleadoId" FunctionName="SistemaVentasModel.Store.UDP_LoginParaEmpleadoId" />
+    <FunctionImportMapping FunctionImportName="UDP_DDLMunicipios" FunctionName="SistemaVentasModel.Store.UDP_DDLMunicipios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_DDLMunicipios_Result">
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+          <ScalarProperty Name="municipioFechaCreacion" ColumnName="municipioFechaCreacion" />
+          <ScalarProperty Name="municipioUsuarioCreacion" ColumnName="municipioUsuarioCreacion" />
+          <ScalarProperty Name="municipioFechaModificacion" ColumnName="municipioFechaModificacion" />
+          <ScalarProperty Name="municipioUsuarioModificacion" ColumnName="municipioUsuarioModificacion" />
+          <ScalarProperty Name="municipioEstado" ColumnName="municipioEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_SelectCargoxId" FunctionName="SistemaVentasModel.Store.UDP_SelectCargoxId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_SelectCargoxId_Result1">
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="cargoNombre" ColumnName="cargoNombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_InsertarDepartamentos" FunctionName="SistemaVentasModel.Store.UDP_InsertarDepartamentos" />
+    <FunctionImportMapping FunctionImportName="UDP_MUNICIPIOxMunicipioId" FunctionName="SistemaVentasModel.Store.UDP_MUNICIPIOxMunicipioId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_MUNICIPIOxMunicipioId_Result">
+          <ScalarProperty Name="municipioId" ColumnName="municipioId" />
+          <ScalarProperty Name="departamentoId" ColumnName="departamentoId" />
+          <ScalarProperty Name="municipioNombre" ColumnName="municipioNombre" />
+          <ScalarProperty Name="municipioFechaCreacion" ColumnName="municipioFechaCreacion" />
+          <ScalarProperty Name="municipioUsuarioCreacion" ColumnName="municipioUsuarioCreacion" />
+          <ScalarProperty Name="municipioFechaModificacion" ColumnName="municipioFechaModificacion" />
+          <ScalarProperty Name="municipioUsuarioModificacion" ColumnName="municipioUsuarioModificacion" />
+          <ScalarProperty Name="municipioEstado" ColumnName="municipioEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_CargarCategoria" FunctionName="SistemaVentasModel.Store.UDP_CargarCategoria">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SistemaVentasModel.UDP_CargarCategoria_Result">
+          <ScalarProperty Name="categoriaId" ColumnName="categoriaId" />
+          <ScalarProperty Name="categoriaDescripcion" ColumnName="categoriaDescripcion" />
+          <ScalarProperty Name="categoriaFechaCreacion" ColumnName="categoriaFechaCreacion" />
+          <ScalarProperty Name="categoriaUsuarioCreacion" ColumnName="categoriaUsuarioCreacion" />
+          <ScalarProperty Name="categoriaFechaModificacion" ColumnName="categoriaFechaModificacion" />
+          <ScalarProperty Name="categoriaUsuarioModificacion" ColumnName="categoriaUsuarioModificacion" />
+          <ScalarProperty Name="categoriaEstado" ColumnName="categoriaEstado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UDP_EditarCategorias" FunctionName="SistemaVentasModel.Store.UDP_EditarCategorias" />
+  </EntityContainerMapping>
+</Mapping>

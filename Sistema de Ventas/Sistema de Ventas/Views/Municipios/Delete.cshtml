@@ -1,0 +1,81 @@
+﻿@model Sistema_de_Ventas.Models.tbMunicipios
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-monospace">BORRAR</h2>
+
+<h3>Esta seguro que desea eliminar?</h3>
+<div>
+    <h4 class="text-md-center">Municipios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.municipioNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.municipioNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.municipioFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.municipioFechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.municipioFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.municipioFechaModificacion)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.municipioEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.municipioEstado)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbDepartamentos.departamentoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbDepartamentos.departamentoNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index", new { @class = "btn btn-default"})
+        </div>
+    }
+</div>

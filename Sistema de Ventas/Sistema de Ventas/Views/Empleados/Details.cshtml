@@ -1,0 +1,146 @@
+﻿@model Sistema_de_Ventas.Models.tbEmpleados
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2  class="text-monospace">DETALLES</h2>
+
+<div>
+    <h4 class="text-md-center">Empleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoNombre)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoApellido)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoSexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoSexo)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoDireccionExacta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoDireccionExacta)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoTelefono)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoCorreoElectronico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoCorreoElectronico)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaNacimiento)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaContratacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaContratacion)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaCreacion)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaModificacion)
+        </dd>
+        <hr />
+        @*<dt>
+            @Html.DisplayNameFor(model => model.empleadoEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoEstado)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbCargos.cargoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbCargos.cargoNombre)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbEstadosCiviles.estadoCivilNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbEstadosCiviles.estadoCivilNombre)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbMunicipios.departamentoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbMunicipios.departamentoId)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.empleadoId }, new { @class = "btn btn-info"}) |
+    @Html.ActionLink("Regresar", "Index", new { @class = "btn btn-default"})
+</p>

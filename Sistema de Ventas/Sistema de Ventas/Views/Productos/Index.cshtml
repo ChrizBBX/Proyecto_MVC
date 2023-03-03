@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Sistema_de_Ventas.Models.tbProductos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inicio</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-striped" id="tabla">
+    <thead style="background-color:black; color:white;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.productoNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productoPrecio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productoStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productoFechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productoFechaModificacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productoEstado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbCategoria.categoriaDescripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbProveedores.proveedorNombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productoNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productoPrecio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productoStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productoFechaCreacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productoFechaModificacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productoEstado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbCategoria.categoriaDescripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbUsuarios.usuarioUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbUsuarios1.usuarioUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbProveedores.proveedorNombre)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.productoId }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Detalles", "Details", new { id = item.productoId }, new { @class = "btn btn-primary" })
+                    @*@Html.ActionLink("Borrar", "Delete", new { id = item.productoId }, new { @class = "btn btn-danger" })*@
+                    <button class="btn-delete btn btn-danger" data-id=@item.productoId>Eliminar</button>
+
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>
+<script src="~/content/dist/plugins/jquery/jquery.min.js"></script>
+<div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-delete-modal-label">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar este Producto?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="#" id="btn-confirm-delete" class="btn btn-danger" onclick="DeleteModal()">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function DeleteModal() {
+        $('#confirm-delete-modal').modal({ backdrop: 'static', keyboard: false })
+    }
+</script>
+
+<script>
+    $(function () {
+        $('.btn-delete').click(function () {
+            var id = $(this).data('id');
+            $('#btn-confirm-delete').attr('href', '/Productos/Delete/' + id);
+            $('#confirm-delete-modal').modal({ backdrop: 'static', keyboard: false });
+        });
+    });
+</script>
+
+<script src="~/content/dist/plugins/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#tabla").DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.2/i18n/es-MX.json'
+            }
+        });
+    });
+</script>

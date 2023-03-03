@@ -1,0 +1,63 @@
+﻿@model Sistema_de_Ventas.Models.tbProveedores
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Proveedores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorDireccionExacta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorDireccionExacta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorTelefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorEmail)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbMunicipios.departamentoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbMunicipios.departamentoId)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.proveedorId }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

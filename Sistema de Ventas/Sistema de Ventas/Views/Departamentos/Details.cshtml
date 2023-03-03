@@ -1,0 +1,68 @@
+﻿@model Sistema_de_Ventas.Models.tbDepartamentos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-monospace">DETALLES</h2>
+
+<div>
+    <h4 class="text-md-center">Departamentos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.departamentoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departamentoNombre)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.departamentoFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departamentoFechaCreacion)
+        </dd>
+        <hr />  
+        <dt>
+            @Html.DisplayNameFor(model => model.departamentoFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departamentoFechaModificacion)
+        </dd>
+        <hr />
+        @*<dt>
+            @Html.DisplayNameFor(model => model.departamentoEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departamentoEstado)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>*@
+
+    </dl>
+</div>
+<br />
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.departamentoId }, new { @class = "btn btn-info" }) ||
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default" })
+</p>

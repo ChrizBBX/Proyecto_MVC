@@ -1,0 +1,35 @@
+﻿@model Sistema_de_Ventas.Models.tbUsuarios
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Usuarios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioUsuario)
+        </dd>
+        <dt>
+           Empleado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbEmpleados2.empleadoNombre)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.usuarioId }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Sistema_de_Ventas.Models.tbEstadosCiviles>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-monospace">INICIO</h2>
+
+<p>
+    @Html.ActionLink("Crear", "Create", null, new { @class = "btn btn-success"})
+</p>
+<table class="table table-striped" id="tabla">
+    <thead style="background-color:black; color:white;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.estadoCivilNombre)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.estadoCivilFechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estadoCivilFechaModificacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estadoCivilEstado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estadoCivilNombre)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.estadoCivilFechaCreacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estadoCivilFechaModificacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estadoCivilEstado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbUsuarios.usuarioUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbUsuarios1.usuarioUsuario)
+                </td>*@
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.estadoCivilId }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.estadoCivilId }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.estadoCivilId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>
+
+<script src="~/content/dist/plugins/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#tabla").DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.2/i18n/es-MX.json'
+            }
+        });
+    });
+</script>

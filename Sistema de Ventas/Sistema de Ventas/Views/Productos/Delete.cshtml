@@ -1,0 +1,106 @@
+﻿@model Sistema_de_Ventas.Models.tbProductos
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar</h2>
+
+<h3>Seguro que quiere eliminar?</h3>
+<div>
+    <h4>Productos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.productoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productoPrecio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoPrecio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productoStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoStock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productoFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoFechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productoFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoFechaModificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productoEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productoEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbCategoria.categoriaDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbCategoria.categoriaDescripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbProveedores.proveedorNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbProveedores.proveedorNombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

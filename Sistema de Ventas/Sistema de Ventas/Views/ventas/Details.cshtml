@@ -1,0 +1,91 @@
+﻿@model Sistema_de_Ventas.Models.tbventa
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbventa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ventaFecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ventaFecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ventaFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ventaFechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ventaFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ventaFechaModificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ventaEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ventaEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbClientes.clienteNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbClientes.clienteNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbEmpleados.empleadoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbEmpleados.empleadoNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbMetodoPago.metodopagoDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbMetodoPago.metodopagoDescripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ventaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

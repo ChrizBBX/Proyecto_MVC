@@ -1,0 +1,67 @@
+﻿@model Sistema_de_Ventas.Models.tbEstadosCiviles
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-monospace">DETALLES</h2>
+
+<div>
+    <h4 class="text-md-center">Estados Civiles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.estadoCivilNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadoCivilNombre)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.estadoCivilFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadoCivilFechaCreacion)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.estadoCivilFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadoCivilFechaModificacion)
+        </dd>
+        @*<hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.estadoCivilEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadoCivilEstado)
+        </dd>*@
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+        @*<hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.estadoCivilId }, new { @class = "btn btn-default"}) |
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default"})
+</p>

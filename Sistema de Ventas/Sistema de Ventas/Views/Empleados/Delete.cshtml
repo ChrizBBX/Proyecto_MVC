@@ -1,0 +1,154 @@
+﻿@model Sistema_de_Ventas.Models.tbEmpleados
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-monospace">BORRAR</h2>
+
+<h3>Esta seguro que desea borrar este registro?</h3>
+<div>
+    <h4 class="text-md-center">Empleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoSexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoSexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoDireccionExacta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoDireccionExacta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoTelefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoCorreoElectronico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoCorreoElectronico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaContratacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaContratacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleadoFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoFechaModificacion)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.empleadoEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleadoEstado)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbCargos.cargoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbCargos.cargoNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbEstadosCiviles.estadoCivilNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbEstadosCiviles.estadoCivilNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbMunicipios.departamentoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbMunicipios.departamentoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" />
+            @Html.ActionLink("Regresar", "Index", new { @class = "btn, btn-default" })
+        </div>
+    }
+</div>

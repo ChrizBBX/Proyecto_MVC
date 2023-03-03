@@ -1,0 +1,67 @@
+﻿@model Sistema_de_Ventas.Models.tbCategoria
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbCategoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.categoriaDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoriaDescripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoriaFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoriaFechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoriaFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoriaFechaModificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoriaEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoriaEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.categoriaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,106 @@
+﻿@model Sistema_de_Ventas.Models.tbProveedores
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbProveedores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorDireccionExacta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorDireccionExacta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorTelefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorFechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorFechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorFechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorFechaModificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedorEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedorEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbMunicipios.departamentoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbMunicipios.departamentoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios.usuarioUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbUsuarios1.usuarioUsuario)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

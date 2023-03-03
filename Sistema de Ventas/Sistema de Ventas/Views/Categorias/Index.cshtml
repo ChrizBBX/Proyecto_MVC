@@ -1,0 +1,185 @@
+﻿@model IEnumerable<Sistema_de_Ventas.Models.tbCategoria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categorias</h2>
+
+<p>
+    <button class="btn-Insertar btn btn-primary" id="btn-Insert" onclick="InsertarModal()">Insertar</button>
+    @*@Html.ActionLink("Nuevo", "Create")*@
+</p>
+<table class="table table-striped" id="tabla">
+    <thead style="background-color:black; color:white;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.categoriaDescripcion)
+            </th>
+
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_Edit", item)
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.categoriaDescripcion)
+                </td>
+
+                @*onclick="ModalEdit()*@
+                <td>
+                    @*<button type="button" id="btnEditar" class="btn btn-block btn-warning bi bi-pencil-fill" data-bs-toggle="modal" data-bs-target="@("#exampleModalEdit-" + item.categoriaId)"> </button>*@
+                    <button type="button" id="btnEditar" class="btn btn-warning" onclick="editarCategoria(@item.categoriaId)">Editar</button>
+
+                    @*<button class="btn-Insertar btn btn-primary" id="btn-Insert" onclick="InsertarModal()">Insertar</button>*@
+                    @Html.ActionLink("Detalles", "Details", new { id = item.categoriaId }, new { @class ="btn btn-success" })|
+                    <button class="btn-delete btn btn-danger" data-id=@item.categoriaId>Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>
+
+<form>
+    <div class="modal fade" id="editarCategoria" tabindex="-1" role="dialog" aria-labelledby="editarDepartamentoLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirm-delete-modal-label">Editar Categoria</h5>
+                    <span aria-hidden="true">&times;</span>
+                </div>
+
+                <div class="modal-body">
+
+
+                    <input type="text" placeholder="ID" name="idCategoria" id="idCategoria" required />
+
+                    <input type="text" placeholder="Nombre" name="categoriaDescripcion" id="nombreCategoria" class="form-control" required />
+                    <label style="color:red" id="VCateg">El campo es requerido</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="CerrarModalEditar()">Cerrar</button>
+                    <button type="button" id="btn-Enviar" name="btn-Enviar" class="btn btn-success" onclick="enviarEdit(idCategoria.value)">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-delete-modal-label">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar este elemento?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="#" id="btn-confirm-delete" class="btn btn-danger" onclick="DeleteModal()">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Create", new Sistema_de_Ventas.Models.tbCategoria());
+
+<script>
+
+    function enviarEdit(id) {
+        var nom = $("#nombreCategoria").val();
+        if (nom != "") {
+            console.log(id)
+            window.location = '/Categorias/Edit/' + id + "?categoriaDescripcion=" + nom;
+            console.log(id)
+            $('#editarCategoria').modal('hide');
+            console.log(id)
+        }
+        else {
+            $("#VCateg").show();
+        }
+    }
+
+</script>
+
+<script>
+    $("#idCategoria").hide();
+    $("#VCateg").hide();
+</script>
+
+<script>
+    function editarCategoria(id) {
+
+        $.ajax({
+            url: "/Categorias/CargarModal",
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ id: id }),
+            success: function (data) {
+                $("#idCategoria").empty();
+                $("nombreCategoria").empty();
+                console.log(categoriaId);
+                console.log(data);
+                $.each(data, function (i, value) {
+                    $("#idCategoria").val(value.categoriaId)
+                    $("#nombreCategoria").val(value.categoriaDescripcion)
+                })
+                $("#editarCategoria").modal('show');
+            }
+        })
+    }
+</script>
+
+<script type="text/javascript">
+    function CerrarModalEditar() {
+        $("#editarCategoria").show();
+    }
+
+    function DeleteModal() {
+        $('#confirm-delete-modal').modal({ backdrop: 'static', keyboard: false })
+    }
+</script>
+
+<script>
+    $(function () {
+        $('.btn-delete').click(function () {
+            var id = $(this).data('id');
+            $('#btn-confirm-delete').attr('href', '/Categorias/Delete/' + id);
+            $('#confirm-delete-modal').modal('show');
+        });
+    });
+</script>
+
+<script src="~/content/dist/plugins/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#tabla").DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.2/i18n/es-MX.json'
+            }
+        });
+    });
+</script>
+
+<script>
+    $("#btn-Insert").click(function () {
+        $('#confirm-Insert-modal').modal('show');
+    });
+</script>
+
+<script type="text/javascript">
+    function InsertarModal() {
+        $('#confirm-Insert-modal').modal({ backdrop: 'static', keyboard: false })
+    }
+</script>

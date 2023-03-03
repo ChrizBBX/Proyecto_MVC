@@ -1,0 +1,230 @@
+﻿@model Sistema_de_Ventas.Models.tbventa
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .containerOculto {
+        display: none;
+    }
+
+    .validacionOculta {
+        display: none;
+        color: red;
+    }
+</style>
+
+<h2>Detalles de Venta</h2>
+
+<div class="form-horizontal">
+    <hr />
+
+    @Html.HiddenFor(model => model.ventaId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.clienteId, "clienteId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("clienteId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.clienteId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.metodopagoId, "metodopagoId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("metodopagoId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.metodopagoId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+<input class="btn btn-primary" type="button" id="DesplegarAregarDetalle" value="Nuevo Detalle" />
+<a class="btn btn-success" href="/ventas/Index">Regresar</a>
+
+<div><br /></div>
+<div class="container containerOculto">
+    <div class="card">
+        <div class="card-header" style="background-color:black; color:white;"><h4>Añadir Productos</h4></div>
+        <div class="card-body">
+
+            <div class="form-group">
+                <label>Producto</label>
+                <div class="col-md-10">
+                    <select id="ddlProductos" class="form-control"></select>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Cantidad</label>
+                <div class="col-md-10">
+                    <input type="number" class="form-control" placeholder="Cantidad" name="txtcantidad" id="txtcantidad" />
+                    <label class="validacionOculta" id="lblcantidad">Ingrese la cantidad</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1"> <input class="btn btn-primary btnInsertarVentaDetalle" type="button" id="btnInsertarVentaDetalle" value="Agregar" /></div>
+                <div class="col-1"> <input class="btn btn-success" id="CerrarAgregarDetalle" value="Cerrar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<div class="container">
+    <table id="tabla1" class="table table-striped" style="width:100%">
+        <thead style="background-color:black; color: white;">
+            <tr>
+                <td>Producto</td>
+                <td>Precio</td>
+                <td>Cantidad</td>
+                <td></td>
+            </tr>
+        </thead>
+
+
+        <tbody id="tbodyVentas">
+        </tbody>
+    </table>
+    
+</div>
+
+<div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-delete-modal-label">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar este elemento?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#tabla1").DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.2/i18n/es-MX.json'
+            },
+            deferRender: true
+        });
+
+        $("#clienteId").prop("disabled", true);
+        $("#metodopagoId").prop("disabled", true);
+        //Cargar Tabla
+        var ventaId = $("#ventaId").val();
+        $.ajax({
+            url: "/ventas/DetallesVenta",
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ ventaId: ventaId }),
+            success: function (result) {
+                var cadena = '';
+                $.each(result, function (index, item) {
+                    cadena += "<tr><td>" + item.productoNombre + "</td><td>" + item.ventaDetalle_Precio + "</td><td>" + item.ventaDetalle_catidad + "</td><td><input type='button' class='.btn-delete btn btn-danger' value='Eliminar' onclick='borrar(" + item.ventaDetalle_Id + ")' /></td></tr>";
+                    console.log(cadena);
+                });
+                $("#tbodyVentas").html(cadena);
+            }
+        })
+        //Fin Cargar Tabla
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#btnInsertarVentaDetalle').click(function () {
+            var productoId = $('#ddlProductos').val();
+            var cantidad = $('#txtcantidad').val();
+            if (cantidad == "") {
+                $("#lblcantidad").show();
+            } else {
+                $("#lblcantidad").fadeOut();
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/ventas/Agregar',
+                data: { productoId: productoId, cantidad: cantidad },
+                success: function (result) {
+                    var cadena = "";
+                    var total = 0;
+                    console.log(result);
+                    $.each(result, function (index, item) {
+                        var subtotal = parseFloat(item.ventaDetalle_Precio) * parseInt(item.ventaDetalle_catidad);
+                        total += subtotal;
+                        cadena += "<tr><td>" + item.productoNombre + "</td><td>" + item.ventaDetalle_Precio + "</td><td>" + item.ventaDetalle_catidad + "</td><td><input type='button' class='.btn-delete btn btn-danger' value='Eliminar' onclick='borrar(" + item.ventaDetalle_Id + ")' /></td></tr>";
+                        console.log(cadena);
+                    });
+                    $("#tbodyVentas").html(cadena);
+                    $("#txttotal").val(total);
+                },
+                error: function (error) {
+
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    function borrar(id) {
+        // Abre el modal de confirmación
+        $('#btn-confirm-delete').off('click').on('click', function () {
+            // Cierra el modal
+            $('#confirm-delete-modal').modal('hide');
+
+            $.ajax({
+                type: "POST",
+                url: "/ventas/DeleteVentaDetalle/" + id,
+                success: function (result) {
+                    alert("La venta ha sido borrada correctamente.");
+                },
+                error: function (error) {
+                    location.reload();
+                }
+            });
+        });
+
+        $('#confirm-delete-modal').modal('show');
+    }
+
+    $("#DesplegarAregarDetalle").click(function () {
+        $(".containerOculto").show();
+    })
+
+    $("#CerrarAgregarDetalle").click(function () {
+        $(".containerOculto").hide();
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/ventas/CargarProductos",
+            success: function (data) {
+                var ddlProductos = $("#ddlProductos");
+                ddlProductos.empty();
+                $.each(data, function (index, item) {
+                    ddlProductos.append($("<option />").val(item.productoId).text(item.productoNombre));
+                });
+            }
+        });
+    });
+</script>

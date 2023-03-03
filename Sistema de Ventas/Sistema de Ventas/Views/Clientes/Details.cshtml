@@ -1,0 +1,71 @@
+﻿@model Sistema_de_Ventas.Models.tbClientes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Clientes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.clienteNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clienteNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clienteApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clienteApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clienteDireccionExacta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clienteDireccionExacta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clienteTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clienteTelefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clienteCorreoElectronico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clienteCorreoElectronico)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbMunicipios.departamentoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbMunicipios.departamentoId)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.clienteId }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

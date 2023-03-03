@@ -1,0 +1,206 @@
+﻿@model IEnumerable<Sistema_de_Ventas.Models.tbCargos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .ValidacionOculta {
+        display: none;
+    }
+</style>
+<h2>Inicio</h2>
+
+<p>
+    <button class="btn btn-primary" id="btn-Insert" onclick="InsertarModal()">Nuevo</button>
+    @*@Html.ActionLink("Crear Nuevo", "_Create", null, new { @class = "btn btn-success" })*@
+</p>
+<table class="table table-striped" id="tabla">
+    <thead style="background-color:black; color:white;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cargoNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cargoFechaCreacion)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.cargoFechaModificacion)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.cargoEstado)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.tbUsuarios.usuarioUsuario)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.tbUsuarios1.usuarioUsuario)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cargoNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cargoFechaCreacion)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.cargoFechaModificacion)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.cargoEstado)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbUsuarios.usuarioUsuario)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.tbUsuarios1.usuarioUsuario)
+                    </td>*@
+                <td>
+                    @*@Html.ActionLink("Editar", "Edit", new { id = item.cargoId, }, new { @class = "btn btn-info" })*@
+                    @Html.ActionLink("Detalles", "Details", new { id = item.cargoId }, new { @class = "btn btn-primary" })
+                    @*@Html.ActionLink("Borrar", "Delete", new { id = item.cargoId }, new { @class = "btn btn-danger" })*@
+                    @*<button type="button" id="btnEditar" class="btn btn-warning" onclick="editarCargo(@item.cargoId)">Editar</button>*@
+                    <button type="button" id="btnEditar" class="btn btn-warning" onclick="editarUsuarios(@item.cargoId)">Editar</button>
+                    <button class="btn-delete btn btn-danger" data-id=@item.cargoId>Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>
+<script>
+    $("#btn-Insert").click(function () {
+        $('#confirm-Insert-modal').modal('show');
+    });
+</script>
+
+<script type="text/javascript">
+    function InsertarModal() {
+        $('#confirm-Insert-modal').modal({ backdrop: 'static', keyboard: false })
+    }
+</script>
+<form>
+    <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="ModalEditar" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirm-delete-modal-label">Crear Usuarios</h5>
+                    <span aria-hidden="true">&times;</span>
+                </div>
+
+                <div class="modal-body">
+
+                    <input type="text" id="txtcargoId" hidden />
+                    <label>Nombre de Cargo</label>
+                    <input type="text" class="form-control" id="txtcargoNombre" name="txtcargoNombre" />
+                    <br />
+                    <label style="color:red" id="VUsuario" class="ValidacionOculta">Este campo es requerido</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="ModalEditCerar()">Cerrar</button>
+                    <button type="button" id="btn-Enviar" name="btn-Enviar" class="btn btn-success" onclick="enviarEdit(txtcargoId.value)">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script src="~/content/dist/plugins/jquery/jquery.min.js"></script>
+<div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-delete-modal-label">Confirmar eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar este Cargo?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="#" id="btn-confirm-delete" class="btn btn-danger" onclick="DeleteModal()">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    function editarUsuarios(id) {
+        $.ajax({
+            url: "/Cargos/CargarModal",
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ id: id }),
+            success: function (data) {
+                $.each(data, function (i, value) {
+                    $("#txtcargoNombre").val(value.cargoNombre)
+                    $("#txtcargoId").val(value.cargoId)
+                })
+                $("#ModalEditar").modal('show');
+            }
+        })
+    }
+</script>
+
+
+<script>
+    function enviarEdit(id) {
+        var cargoNombre = $("#txtcargoNombre").val();
+        if (cargoNombre != "" && cargoNombre != null) {
+            window.location = '/Cargos/Edit/' + id + "?cargoNombre=" + cargoNombre;
+            $('#editarUsuarios').modal('hide');
+            $(".ValidacionOculta").hide();
+        }
+        else {
+            $(".ValidacionOculta").show();
+        }
+    }
+
+    function ModalEditCerar() {
+        $("#ModalEditar").show('hide');
+    }
+
+</script>
+
+
+<script type="text/javascript">
+    function DeleteModal() {
+        $('#confirm-delete-modal').modal({ backdrop: 'static', keyboard: false })
+    }
+</script>
+
+<script>
+    $(function () {
+        $('.btn-delete').click(function () {
+            var id = $(this).data('id');
+            $('#btn-confirm-delete').attr('href', '/Cargos/Delete/' + id);
+            $('#confirm-delete-modal').modal({ backdrop: 'static', keyboard: false });
+        });
+    });
+</script>
+
+<script src="~/content/dist/plugins/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#tabla").DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.2/i18n/es-MX.json'
+            }
+        });
+    });
+</script>
+

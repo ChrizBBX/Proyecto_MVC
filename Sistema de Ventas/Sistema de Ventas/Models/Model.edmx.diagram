@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7838853855234d22bfabcb604b35a8c4" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="SistemaVentasModel.tbCargos" Width="1.5" PointX="12.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbCategoria" Width="1.5" PointX="12.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbClientes" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbCompraDetalles" Width="1.5" PointX="23" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbCompras" Width="1.5" PointX="17.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbDepartamentos" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbEmpleados" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbEstadosCiviles" Width="1.5" PointX="12.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbMetodoPago" Width="1.5" PointX="12.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbMunicipios" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbProductos" Width="1.5" PointX="15" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbProveedores" Width="1.5" PointX="17.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbUsuarios" Width="1.5" PointX="10.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbventa" Width="1.5" PointX="15" PointY="18.125" IsExpanded="true" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCargos_dbo_tbUsuarios_cargoUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbEmpleados_dbo_tbCargos_cargoId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaFechaModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCategoria_dbo_tbUsuarios_categoriaUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbProductos_tbCategoria_categoriaId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbClientes_dbo_tbMunicipios_municipioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbClientes_dbo_tbUsuarios_clienteUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventa_tbClientes_clienteId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCompraDetalles_dbo_tbUsuarios_compraDetalleUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCompraDetalles_tbCompras_compraId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCompraDetalles_tbProducto_productoId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCompras_dbo_tbUsuarios_compraUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbCompras_tbProveedores_proveedorId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbDepartamentos_dbo_tbUsuarios_departamentoUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_tbMunicipios_tbDepartamentos_departamentoId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbEmpleados_dbo_tbEstadosCiviles_estadoCivilId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbEmpleados_dbo_tbMunicipios_municipioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbEmpleados_dbo_tbUsuarios_empleadoUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbUsuarios_dbo_tbEmpleados_empleadoId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventa_dbo_tbEmpleados_empleadoId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilFechaModificacion_estadoCivilId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbEstadosCiviles_dbo_tbUsuarios_estadoCivilUsuarioCreacion_estadoCivilId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbMetodoPago_dbo_tbUsuarios_metodopagoUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventa_tbMetodoPago_metodopagoId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbMunicipios_dbo_tbUsuarios_municipioUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbProveedores_dbo_tbMunicipios_municipioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbProductos_dbo_tbUsuarios_productoUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbProductos_tbProveedores_proveedorid" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbproveedores_dbo_tbUsuarios_proveedorUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbProveedores_dbo_tbUsuarios_proveedorUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbUsuarios_dbo_tbUsuarios_usuarioUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioCreacion_usuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventa_dbo_tbUsuarios_ventaUsuarioModificacion_usuarioId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SistemaVentasModel.tbventaDetalles" Width="1.5" PointX="20.25" PointY="15.375" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventaDetalles_tbProducto_productoId" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioCreacion_usuarioId" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventaDetalles_dbo_tbUsuarios_ventaDetalle_UsuarioModificacion_usuarioId" />
+        <AssociationConnector Association="SistemaVentasModel.FK_dbo_tbventaDetalles_tbventa_ventaId" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
